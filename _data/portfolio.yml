@@ -66,13 +66,6 @@
   url:         "/p/BayCurrentDiving"
   year:        "2026"
 
-- title:       "Meridian Mind Identity"
-  category:    identity
-  tags:        ["Design System", "Style Guide", "Healthcare"]
-  description: "Full brand identity guide for Meridian Mind, a psychiatric practice — covering logo system, therapeutic green color palette, Cormorant Garamond and DM Sans typography, UI components, motion principles, and voice guidelines for a calm, clinical digital presence."
-  cover:       "/assets/images/portfolio/meridian-mind.jpg"
-  url:         "/p/MeridianMind"
-  year:        "2026"
 
 - title:       "Brand Identity System - FoB_v2"
   category:    identity
