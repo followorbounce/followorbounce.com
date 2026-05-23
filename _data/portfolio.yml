@@ -42,14 +42,6 @@
   url:         "https://marinewoodcraft.com/"
   year:        "2026"
 
-- title:       "Brand Identity System"
-  category:    identity
-  tags:        ["Logo", "Identity", "Guidelines"]
-  description: "Comprehensive brand identity passport for Marine Wood Craft — a reverse-engineered visual style guide covering color tokens, typography, motion language, component system, and cross-media application guidelines."
-  cover:       "/assets/images/portfolio/marine-wood-craft.jpg"
-  url:         "/p/MarineWoodCraft"
-  year:        "2026"
-
 - title:       "Bay Current Diving"
   category:    web, development
   tags:        ["Static Site", "GitHub Pages", "Naming"]
@@ -58,23 +50,6 @@
   url:         "https://followorbounce.github.io/BayCurrentDiving/"
   year:        "2026" 
 
-- title:       "Brand Identity System"
-  category:    identity
-  tags:        ["Brand Book", "Typography", "Colour"]
-  description: "Complete brand identity system for Bay Current Diving — covering color palette, typography, logo anatomy, icon system, photography direction, copy tone, workwear, and digital/SEO guidelines for a solo SF Bay commercial diving operation"
-  cover:       "/assets/images/portfolio/bay-current-diving.jpg"
-  url:         "/p/BayCurrentDiving"
-  year:        "2026"
-
-
-- title:       "Brand Identity System - FoB_v2"
-  category:    identity
-  tags:        ["Design System", "Editorial", "Presentation"]
-  description: "Identity system presentation for Follow or Bounce v2 — a publication at the intersection of technology, literature, and law. Covers typographic scale, ink-on-paper color logic, grid principles, UI components, and the editorial philosophy behind the brand"
-  cover:       "/assets/images/portfolio/fob-v2.jpg"
-  url:         "/p/FollowOrBounce_v2"
-#  featured:    true
-  year:        "2026"
 
 - title:       "Ministry of Final Things"
   category:    web
