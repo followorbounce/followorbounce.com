@@ -209,3 +209,20 @@
  # featured: "true"
   year: "2026"
 
+- title: "Signal & Noise"
+  category: "web"
+  tags: ["Philosophy", "Communication", "Technology"]
+  description: "A philosophical manifesto questioning modern dependence on screens, exploring human communication as signal, and inviting radical disconnection."
+  cover: "/assets/images/portfolio/signal-noise.svg"
+  url: "/p/signal-noise"
+  featured: "true"
+  year: "2026"
+
+- title: "Marine VHF Channels"
+  category: "web"
+  tags: ["", "", ""]
+  description: "A philosophical manifesto questioning modern dependence on screens, exploring human communication as signal, and inviting radical disconnection."
+  cover: ""
+  url: "/p/marine-vhf-channels"
+  featured: "true"
+  year: "2026"
