@@ -194,3 +194,21 @@
   url: "/p/marine-vhf-channels"
   featured: "true"
   year: "2026"
+
+- title: "Divine Training Architecture"
+  category: "web"
+  tags: ["Philosophy", "Neural Networks", "Theology"]
+  description: "Judgment Day as the separation layer of a divine neural network — part lost scripture, part theological AI manifesto, part sacred simulation interface."
+  cover: ""
+  url: "/p/judgment-day-divine-network/"
+  featured: "true"
+  year: "2026"
+
+- title: "The Word Is Love"
+  category: "web"
+  tags: ["Philosophy", "Love", "Theology"]
+  description: "An exploration of the concept of love through a digital lens, examining its implications in the age of technology and artificial intelligence."
+  cover: ""
+  url: "/p/the-word-is-love/"
+  featured: "true"
+  year: "2026"
