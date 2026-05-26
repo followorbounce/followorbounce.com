@@ -1,0 +1,44 @@
+# Follow or Bounce
+> A publication at the intersection of technology, literature, and the agreements that hold them together.
+> Based in Honolulu, Hawaii. Est. 2024.
+
+## Literature / Essays
+
+- https://followorbounce.com/p/signal-noise — Signal & Noise: A philosophical manifesto on smartphone dependence, human communication as signal, and radical disconnection.
+- https://followorbounce.com/p/collapse — Ministry of Final Things: Luxury apocalypse catalogue documenting the aesthetic collapse of civilization through brutalist editorial design.
+- https://followorbounce.com/p/logos-the-word — Logos: The Word: A digital liturgy where the Logos is the operating system of reality and the Word is the code that runs the universe.
+- https://followorbounce.com/p/divine-liturgy-architecture — Divine Architecture: Philosophical and architectural examination of the Divine Liturgy as spiritual system and sacred operating structure.
+- https://followorbounce.com/p/its-us — We Are Not Separate: Immersive philosophical editorial on the dissolution of the isolated self into collective consciousness and divine unity.
+- https://followorbounce.com/p/heros-journey — The Hero's Journey: Mythopoetic exploration across cultures — from Gilgamesh to the Bhagavad Gita — with branching moral choices.
+- https://followorbounce.com/p/prophetic-os — Prophetic OS: Everything matters. Sometimes we just don't see it. INVISIBLE ≠ EMPTY.
+- https://followorbounce.com/p/singularity — Singularity Archive: A classified transmission on consciousness, programmed existence, and the neural architecture of reality.
+- https://followorbounce.com/p/the-architecture-of-untruth — The Architecture of Untruth: Philosophical archive on lies, omission, and the collapse of sincerity in modern civilization.
+- https://followorbounce.com/p/the-closed-door — The Closed Door: Why DMT may be dangerous, unnecessary, or spiritually deceptive — a philosophical and scientific examination.
+- https://followorbounce.com/p/humanity-as-functional-consciousness — Humanity as Functional Consciousness: Is awareness autonomy, or merely a function executing inside a larger system?
+- https://followorbounce.com/p/who-are — Who Are: Existential digital manifesto on identity, empire, consciousness, and the illusion of progress.
+- https://followorbounce.com/p/the-illuminators — The Illuminators: A forbidden digital sermon on light, projection, and moral collapse.
+- https://followorbounce.com/p/ani-vaho-hoshia-na — Ani Vaho Hoshia Na: Liturgical manuscript reconstructed through modernist editorial design. Sacred Hebrew prayer-book typography.
+- https://followorbounce.com/p/sheva-berachos — Sheva Berachos: Sacred transmission reconstructed through modernist editorial design. ArtScroll liturgical typography.
+
+## Technology / Reference
+
+- https://followorbounce.com/p/ham-technician-crash-course — HAM Technician Crash Course: Pass the FCC Amateur Radio Technician License Exam in 7 days. Interactive cheat sheet and practice quiz.
+- https://followorbounce.com/p/marine-vhf-channels — Marine VHF Channels: Complete reference of Marine VHF radio channels for US and Hawaii waters. Emergency, Coast Guard, NOAA weather frequencies.
+- https://followorbounce.com/p/radio-reference-portal — Radio Reference Portal: Complete radio monitoring reference — Marine VHF, HAM, Satellite, Aviation, Emergency, NOAA, and Digital modes for US and Hawaii.
+- https://followorbounce.com/p/rfid-keys — KeyWave Hawaii: Professional RFID, NFC & iButton access key duplication in Hawaii. Mail-in service available.
+
+## Work
+
+- https://followorbounce.com/p/BayCurrentDiving — Bay Current Diving: Brand identity system and creative direction for a SF Bay commercial hull diving service.
+- https://followorbounce.com/p/MarineWoodCraft — Marine Wood Craft: Website for a Honolulu-based marine woodworking and boat restoration company.
+- https://followorbounce.com/p/MeridianMind — Meridian Mind: Brand identity for a wellness and acupuncture practice.
+- https://followorbounce.com/p/FollowOrBounce_v2 — Follow or Bounce v2: Second iteration of the publication platform.
+
+## Site Sections
+
+- https://followorbounce.com/ — Home / Portfolio
+- https://followorbounce.com/literature/ — Literature: All essays and long-form writing
+- https://followorbounce.com/technology/ — Technology: All reference guides and tools
+- https://followorbounce.com/work/ — Work: Client projects and case studies
+- https://followorbounce.com/contracts/ — Contracts: Analysis of digital law, open source, and platform terms
+- https://followorbounce.com/about/ — About Follow or Bounce

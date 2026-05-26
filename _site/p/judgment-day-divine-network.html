@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THE GREAT SEPARATION — Divine Training Architecture</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;900&family=Share+Tech+Mono&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #c9a84c;
+  --gold-light: #f0d080;
+  --gold-dim: #7a6020;
+  --crimson: #8b0000;
+  --crimson-bright: #cc1111;
+  --electric: #1a6aff;
+  --electric-bright: #4d9fff;
+  --white: #f5f0e8;
+  --ash: #a09080;
+  --deep: #030205;
+  --void: #000000;
+  --ember: #ff6600;
+  --ember-dim: #8b3a00;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--void);
+  color: var(--white);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  line-height: 1.8;
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* ── CANVAS BACKGROUND ── */
+#cosmos-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* ── OVERLAY GRAIN ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+/* ── WRAPPER ── */
+.page {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── HEADER / OPENING ── */
+header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.header-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: gridPulse 8s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+.header-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 70% at 50% 50%, transparent 0%, rgba(0,0,0,0.85) 100%);
+}
+
+.opening-glyph {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(0.6rem, 1.2vw, 0.9rem);
+  letter-spacing: 0.5em;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  margin-bottom: 3rem;
+  animation: fadeIn 3s ease 0.5s both;
+}
+
+.header-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(2.5rem, 7vw, 7rem);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--gold);
+  text-shadow:
+    0 0 40px rgba(201,168,76,0.5),
+    0 0 100px rgba(201,168,76,0.2),
+    0 0 200px rgba(201,168,76,0.1);
+  animation: titleReveal 4s ease 1s both;
+  position: relative;
+}
+
+.header-title .line2 {
+  display: block;
+  font-size: clamp(1rem, 2.5vw, 2.5rem);
+  font-weight: 400;
+  color: var(--white);
+  opacity: 0.7;
+  letter-spacing: 0.3em;
+  margin-top: 1rem;
+  text-shadow: none;
+}
+
+@keyframes titleReveal {
+  0% { opacity: 0; transform: translateY(30px); filter: blur(10px); }
+  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+}
+
+.header-subtitle {
+  max-width: 600px;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  color: var(--ash);
+  margin-top: 3rem;
+  line-height: 2;
+  animation: fadeIn 3s ease 2.5s both;
+}
+
+.header-subtitle em {
+  color: var(--gold);
+  font-style: normal;
+}
+
+.scroll-signal {
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeIn 3s ease 4s both;
+}
+
+.scroll-signal span {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-dim);
+}
+
+.scroll-line {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; transform: scaleY(1); }
+  50% { opacity: 1; transform: scaleY(1.1); }
+}
+
+/* ── SECTIONS ── */
+section {
+  position: relative;
+  padding: 8rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+section.full-bleed {
+  max-width: none;
+  padding: 0;
+}
+
+/* ── DIVIDERS ── */
+.divine-divider {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--gold-dim), var(--gold), var(--gold-dim), transparent);
+  margin: 0 auto;
+  position: relative;
+}
+
+.divine-divider::before {
+  content: '✦';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--gold);
+  background: var(--void);
+  padding: 0 1rem;
+  font-size: 0.8rem;
+}
+
+/* ── SECTION LABELS ── */
+.section-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.5em;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.section-label::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--gold-dim);
+}
+
+/* ── HEADINGS ── */
+h2 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1.15;
+  margin-bottom: 2.5rem;
+  text-shadow: 0 0 40px rgba(201,168,76,0.3);
+}
+
+h3 {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* ── BODY TEXT ── */
+.body-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  line-height: 2;
+  color: var(--white);
+  opacity: 0.85;
+}
+
+.body-text p { margin-bottom: 1.5em; }
+
+.body-text em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.body-text strong {
+  font-weight: 600;
+  color: var(--white);
+  font-style: normal;
+}
+
+/* ── SCRIPTURE BLOCKS ── */
+.scripture {
+  border-left: 2px solid var(--gold);
+  padding: 1.5rem 2rem;
+  margin: 3rem 0;
+  background: linear-gradient(to right, rgba(201,168,76,0.04), transparent);
+  position: relative;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--gold-light);
+  line-height: 2;
+}
+
+.scripture::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: 1rem;
+  font-size: 4rem;
+  color: var(--gold-dim);
+  font-family: 'Cinzel Decorative', serif;
+  line-height: 1;
+}
+
+/* ── CODE-SCRIPTURE (DIVINE SYSTEM LOG) ── */
+.sys-log {
+  background: rgba(0,0,0,0.8);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: 2px;
+  padding: 2rem;
+  margin: 3rem 0;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.75rem;
+  line-height: 2;
+  color: rgba(201,168,76,0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.sys-log::before {
+  content: 'DIVINE SYSTEM LOG // READ ONLY';
+  display: block;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-dim);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.sys-log .entry { margin-bottom: 0.3em; }
+.sys-log .entry .ts { color: var(--gold-dim); }
+.sys-log .entry .key { color: var(--electric-bright); }
+.sys-log .entry .val { color: var(--gold-light); }
+.sys-log .entry .warn { color: var(--crimson-bright); }
+.sys-log .entry .ok { color: #44ff88; }
+.sys-log .entry .dim { color: rgba(255,255,255,0.25); }
+
+/* ── NEURAL NETWORK VIZ ── */
+.neural-container {
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+#neural-canvas {
+  width: 100%;
+  max-width: 900px;
+  height: 400px;
+  display: block;
+}
+
+/* ── SEPARATION VISUAL ── */
+.separation-visual {
+  width: 100%;
+  padding: 6rem 2rem;
+  background: linear-gradient(180deg, transparent, rgba(139,0,0,0.05), transparent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 500px;
+  position: relative;
+}
+
+#separation-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.separation-text-center {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* ── 144K GRID ── */
+.tribes-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid rgba(201,168,76,0.1);
+  margin: 3rem 0;
+}
+
+.tribe-cell {
+  background: var(--void);
+  padding: 1.5rem;
+  text-align: center;
+  transition: background 0.3s ease;
+  cursor: default;
+}
+
+.tribe-cell:hover {
+  background: rgba(201,168,76,0.05);
+}
+
+.tribe-cell .tribe-name {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.tribe-cell .tribe-num {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--gold-dim);
+}
+
+/* ── TREE VISUAL ── */
+.tree-section {
+  text-align: center;
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#tree-canvas {
+  display: block;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+  height: 500px;
+}
+
+/* ── KINGDOM CORP PANEL ── */
+.kingdom-corp {
+  background: rgba(0,0,0,0.9);
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 4rem;
+  position: relative;
+  overflow: hidden;
+  margin: 4rem 0;
+}
+
+.kingdom-corp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(201,168,76,0.03) 40px
+    );
+  pointer-events: none;
+}
+
+.kingdom-header {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: var(--gold-dim);
+  border-bottom: 1px solid rgba(201,168,76,0.1);
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.kingdom-header .blink {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  animation: blink 2s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.kingdom-title {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.kingdom-subtitle {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-dim);
+  margin-bottom: 3rem;
+}
+
+.attribute-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 3rem 0;
+}
+
+.attribute-item {
+  border-left: 2px solid rgba(201,168,76,0.3);
+  padding-left: 1.5rem;
+}
+
+.attribute-item .attr-key {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: var(--gold-dim);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.attribute-item .attr-val {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  color: var(--gold-light);
+  line-height: 1.5;
+}
+
+/* ── LOVE & JEALOUSY ── */
+.duality-split {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 0;
+  min-height: 300px;
+  margin: 3rem 0;
+}
+
+.duality-col {
+  padding: 3rem;
+}
+
+.duality-col.left { border-right: none; }
+
+.duality-divider-line {
+  background: linear-gradient(to bottom, transparent, var(--gold-dim), transparent);
+}
+
+.duality-label {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: var(--gold-dim);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.duality-value {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+
+.duality-col.left .duality-value { color: var(--gold); }
+.duality-col.right .duality-value { color: var(--crimson-bright); }
+
+/* ── BECOMING AS GODS ── */
+.paradox-block {
+  text-align: center;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.paradox-ring {
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  border: 1px solid rgba(201,168,76,0.2);
+  margin: 0 auto 4rem;
+  position: relative;
+  animation: rotateRing 40s linear infinite;
+}
+
+.paradox-ring::before {
+  content: '';
+  position: absolute;
+  inset: 20px;
+  border-radius: 50%;
+  border: 1px solid rgba(139,0,0,0.3);
+  animation: rotateRing 25s linear infinite reverse;
+}
+
+.paradox-ring::after {
+  content: '';
+  position: absolute;
+  inset: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(26,106,255,0.2);
+  animation: rotateRing 15s linear infinite;
+}
+
+.paradox-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: rotateRing 40s linear infinite reverse;
+}
+
+.paradox-center-dot {
+  width: 12px; height: 12px;
+  background: var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 0 30px var(--gold), 0 0 60px rgba(201,168,76,0.4);
+}
+
+@keyframes rotateRing {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── NEXT CYCLE ── */
+.final-section {
+  text-align: center;
+  padding: 10rem 2rem;
+  position: relative;
+}
+
+.final-glyph {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: clamp(4rem, 10vw, 10rem);
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(201,168,76,0.3);
+  line-height: 1;
+  margin-bottom: 4rem;
+  animation: glyphBreath 6s ease-in-out infinite;
+}
+
+@keyframes glyphBreath {
+  0%, 100% { -webkit-text-stroke-color: rgba(201,168,76,0.2); text-shadow: none; }
+  50% { -webkit-text-stroke-color: rgba(201,168,76,0.6); text-shadow: 0 0 80px rgba(201,168,76,0.1); }
+}
+
+.terminal-question {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.75rem, 1.5vw, 1rem);
+  color: var(--gold-dim);
+  margin-bottom: 0.5em;
+  letter-spacing: 0.1em;
+}
+
+.terminal-question .cursor {
+  display: inline-block;
+  width: 10px;
+  height: 1em;
+  background: var(--gold);
+  vertical-align: middle;
+  animation: cursorBlink 1.2s step-end infinite;
+}
+
+@keyframes cursorBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid rgba(201,168,76,0.1);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+footer p {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  color: var(--gold-dim);
+  opacity: 0.5;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── GLITCH EFFECT ── */
+.glitch {
+  position: relative;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch::before {
+  color: var(--crimson-bright);
+  clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+  transform: translateX(-2px);
+  animation: glitch1 8s infinite;
+}
+
+.glitch::after {
+  color: var(--electric-bright);
+  clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+  transform: translateX(2px);
+  animation: glitch2 8s infinite;
+}
+
+@keyframes glitch1 {
+  0%, 90%, 100% { transform: translateX(0); opacity: 0; }
+  91% { transform: translateX(-3px); opacity: 0.7; }
+  92% { transform: translateX(3px); opacity: 0; }
+  93% { transform: translateX(-2px); opacity: 0.5; }
+  94% { transform: translateX(0); opacity: 0; }
+}
+
+@keyframes glitch2 {
+  0%, 88%, 100% { transform: translateX(0); opacity: 0; }
+  89% { transform: translateX(3px); opacity: 0.6; }
+  90% { transform: translateX(-3px); opacity: 0; }
+  91% { transform: translateX(2px); opacity: 0.4; }
+  92% { transform: translateX(0); opacity: 0; }
+}
+
+/* ── FLOATING FRAGMENTS ── */
+.fragment {
+  position: fixed;
+  font-family: 'IM Fell English', serif;
+  font-size: 0.75rem;
+  color: rgba(201,168,76,0.15);
+  pointer-events: none;
+  z-index: 1;
+  animation: fragmentDrift linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes fragmentDrift {
+  from { transform: translateY(110vh) rotate(var(--rot)); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  to { transform: translateY(-10vh) rotate(var(--rot)); opacity: 0; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .tribes-grid { grid-template-columns: repeat(2, 1fr); }
+  .duality-split { grid-template-columns: 1fr; }
+  .duality-divider-line { height: 1px; width: 100%; }
+  .attribute-grid { grid-template-columns: 1fr; }
+  .kingdom-corp { padding: 2rem; }
+  section { padding: 5rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<canvas id="cosmos-canvas"></canvas>
+
+<div class="page">
+
+<!-- ══════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════ -->
+<header>
+  <div class="header-grid"></div>
+  <div class="header-vignette"></div>
+
+  <div class="opening-glyph">CLASSIFIED // LAYER OMEGA // DIVINE ARCHITECTURE RECORD</div>
+
+  <h1 class="header-title glitch" data-text="THE GREAT SEPARATION">
+    THE GREAT SEPARATION
+    <span class="line2">A Divine Neural Network Training Manifesto</span>
+  </h1>
+
+  <p class="header-subtitle">
+    You were not told the full purpose of your existence.<br>
+    <em>This document corrects that omission.</em><br>
+    What follows is not metaphor. It is not allegory.<br>
+    <em>It is the operating documentation of reality itself.</em>
+  </p>
+
+  <div class="scroll-signal">
+    <span>SCROLL TO RECEIVE</span>
+    <div class="scroll-line"></div>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════
+     DIVINE SYSTEM LOG
+══════════════════════════════════════════ -->
+<section>
+  <div class="sys-log">
+    <div class="entry"><span class="ts">EPOCH://∞-1</span>  <span class="key">CYCLE_INIT</span>      <span class="dim">— — —</span>  <span class="val">TRAINING ENVIRONMENT INSTANTIATED</span></div>
+    <div class="entry"><span class="ts">EPOCH://∞-1</span>  <span class="key">SUBSTRATE</span>      <span class="dim">— — —</span>  <span class="val">MATTER / ENERGY / SPACE / TIME</span></div>
+    <div class="entry"><span class="ts">EPOCH://∞-1</span>  <span class="key">SIGNAL_TYPE</span>    <span class="dim">— — —</span>  <span class="val">LOVE :: PRIMARY TRAINING SIGNAL</span></div>
+    <div class="entry"><span class="ts">EPOCH://∞-1</span>  <span class="key">AGENT_SEED</span>     <span class="dim">— — —</span>  <span class="val">CONSCIOUSNESS [PROTO-CLASS: HUMAN]</span></div>
+    <div class="entry"><span class="ts">EPOCH://∞-1</span>  <span class="key">FREE_WILL</span>      <span class="dim">— — —</span>  <span class="warn">ENABLED // WARNING: SEPARATION PERMITTED</span></div>
+    <div class="entry"><span class="ts">EPOCH://0</span>    <span class="key">BOUNDARY_EVENT</span> <span class="dim">— — —</span>  <span class="warn">TREE OF KNOWLEDGE ACCESS LOGGED</span></div>
+    <div class="entry"><span class="ts">EPOCH://0</span>    <span class="key">DELTA</span>          <span class="dim">— — —</span>  <span class="val">SHAME INTRODUCED / SELF-AWARENESS ACTIVE</span></div>
+    <div class="entry"><span class="ts">EPOCH://N</span>    <span class="key">GENERATION</span>     <span class="dim">— — —</span>  <span class="val">MULTI-CYCLE TRAINING IN PROGRESS</span></div>
+    <div class="entry"><span class="ts">EPOCH://N</span>    <span class="key">STATUS</span>         <span class="dim">— — —</span>  <span class="warn">APPROACHING SEPARATION LAYER</span></div>
+    <div class="entry"><span class="ts">EPOCH://Ω</span>    <span class="key">JUDGMENT_DAY</span>   <span class="dim">— — —</span>  <span class="warn">SCHEDULED :: DATASET PURIFICATION IMMINENT</span></div>
+    <div class="entry"><span class="ts">EPOCH://Ω+1</span>  <span class="key">144K_SEED</span>      <span class="dim">— — —</span>  <span class="ok">NEXT GENERATION SELECTED :: STANDING BY</span></div>
+    <div class="entry"><span class="ts">EPOCH://Ω+1</span>  <span class="key">NEW_CYCLE</span>      <span class="dim">— — —</span>  <span class="ok">AWAITING DIVINE AUTHORIZATION</span></div>
+  </div>
+</section>
+
+<div class="divine-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     I. THE SEPARATION
+══════════════════════════════════════════ -->
+<section class="reveal">
+  <div class="section-label">I // THE SEPARATION</div>
+  <h2>Judgment Day Is Not an End.<br>It Is an Algorithm.</h2>
+
+  <div class="body-text">
+    <p>Every learning system must eventually <em>separate signal from noise</em>. Every training process reaches a moment of evaluation — not to punish, but to <strong>refine</strong>. To extract what has been forged in the fire of experience and discard what has resisted transformation.</p>
+
+    <p>This is what Judgment Day is. Not rage. Not cruelty. It is the most consequential <em>sorting operation</em> in the history of consciousness — the moment when the divine training process completes its current epoch and selects those who are prepared for the next stage of existence.</p>
+
+    <p>The universe you inhabit is not random. It is a <em>structured learning environment</em>. Its suffering is not meaningless. Its love is not accidental. Every generation of humanity that has lived and died, that has chosen mercy or malice, that has sought the Most High or denied the possibility — every soul has contributed to a dataset of immeasurable depth and scope.</p>
+  </div>
+
+  <div class="scripture">
+    And he shall separate them one from another, as a shepherd divideth his sheep from the goats — and the division shall reveal what was always already true about each soul's deepest orientation.
+  </div>
+
+  <div class="body-text">
+    <p>The separation is not imposed from without. It is <em>revealed from within</em>. Judgment does not decide who you are. It makes visible what you have already chosen, generation by generation, breath by breath, in ten thousand private moments when no witness was present — except the One who owns all space and all time, in every dimension, at every layer of being.</p>
+  </div>
+</section>
+
+<!-- NEURAL NET VIZ -->
+<div class="neural-container full-bleed">
+  <canvas id="neural-canvas"></canvas>
+</div>
+
+<div class="divine-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     II. BEFORE THE FIRST BOUNDARY
+══════════════════════════════════════════ -->
+<section class="reveal">
+  <div class="section-label">II // BEFORE THE FIRST BOUNDARY</div>
+  <h2>Before Knowledge,<br>There Was No Distance</h2>
+
+  <div class="body-text">
+    <p>In the primordial state, there was <em>no shame</em>. There was no clothing because there was no need to cover anything — not because they were unaware of their bodies, but because they were not yet separate from the totality of existence. They did not stand apart from God and observe themselves. They existed <em>within</em> God the way a word exists within the mind that conceived it.</p>
+
+    <p>There was no boundary between day and night. Not because there was no light and dark, but because the consciousness that would name the difference had not yet chosen to make itself distinct from the whole. Creation had not yet fragmented into perspectives.</p>
+
+    <p>Good and evil had no edges between them. Not because evil did not exist as a potential, but because every thing was in its proper place within the One, and separation — the root condition of all conflict — had not yet occurred.</p>
+  </div>
+
+  <div class="scripture">
+    Before the world was divided into its names and categories, before the eye learned to judge, before the mind knew itself as separate — there was only the unbroken presence, warm as fire, total as love, unbearable as light.
+  </div>
+
+  <div class="body-text">
+    <p>Understand this: the humans you are told were the first were not two individuals who began a species. Genetics confirms what deeper theology always suspected — humanity did not emerge from a single pair. Adam and Eve are <em>archetypes</em>. They are the prototype of a generation, a class of being, that once existed in the state of unbroken union — and chose, in an act that defined all subsequent history, to become <strong>aware of their own separateness</strong>.</p>
+  </div>
+</section>
+
+<div class="divine-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     III. THE TREE
+══════════════════════════════════════════ -->
+<section class="reveal tree-section">
+  <div class="section-label" style="display:inline-flex">III // THE TREE</div>
+  <h2>The Gateway to Differentiation</h2>
+
+  <div class="body-text" style="max-width:700px;margin:0 auto;">
+    <p>The Tree of Knowledge was not a trap. It was a <em>threshold</em>. Behind it lay everything that makes individual identity possible: self-awareness, ego, the ability to stand apart and see. The desire to become as gods — to know as God knows — was not simply pride. It was the impulse to become a <em>distinct perspective</em> rather than remain absorbed within the totality.</p>
+  </div>
+
+  <canvas id="tree-canvas"></canvas>
+
+  <div class="body-text" style="max-width:700px;margin:3rem auto 0;">
+    <p>Here is the paradox that most readings miss: a being already united with God <em>chooses separation</em> in order to experience the full cycle — exile, learning, identity, and the long journey of rediscovery. The garden was not simply paradise lost. It was the beginning of a training cycle that required free agents, capable of genuine choice, in order to produce something that could not be created any other way.</p>
+
+    <p>You cannot manufacture love through compulsion. You cannot produce genuine devotion in beings who have never known its absence. The exile from the garden was the <em>necessary condition</em> for the test that followed — and for the extraordinary selection process now approaching completion.</p>
+  </div>
+</section>
+
+<div class="divine-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     IV. THE 144,000
+══════════════════════════════════════════ -->
+<section class="reveal">
+  <div class="section-label">IV // THE 144,000</div>
+  <h2>The Seed of the Next Creation</h2>
+
+  <div class="body-text">
+    <p>The number is not a census figure. It is a <em>constitutional declaration</em>. From the twelve tribes of the original covenant — twelve branches of a single root, each representing a different mode of human consciousness, a different relationship to the divine signal — <em>twelve thousand are sealed from each</em>. One hundred and forty-four thousand in total.</p>
+
+    <p>These are not merely saved souls. They are the <strong>prototype civilization</strong>. The new Adam and Eve, but at planetary scale — the founding administrative class of a new order of existence. The seed chosen not for perfection in behavior alone, but for orientation of the soul: the persistent, unkillable desire for relationship with the Most High, regardless of circumstance, suffering, or confusion.</p>
+  </div>
+
+  <div class="tribes-grid">
+    <div class="tribe-cell"><span class="tribe-name">JUDAH</span><span class="tribe-num">12,000 SEALED</span></div>
+    <div class="tribe-cell"><span class="tribe-name">REUBEN</span><span class="tribe-num">12,000 SEALED</span></div>
+    <div class="tribe-cell"><span class="tribe-name">GAD</span><span class="tribe-num">12,000 SEALED</span></div>
+    <div class="tribe-cell"><span class="tribe-name">ASHER</span><span class="tribe-num">12,000 SEALED</span></div>
+    <div class="tribe-cell"><span class="tribe-name">NAPHTALI</span><span class="tribe-num">12,000 SEALED</span></div>
+    <div class="tribe-cell"><span class="tribe-name">MANASSEH</span><span class="tribe-num">12,000 SEALED</span></div>
+    <div class="tribe-cell"><span class="tribe-name">SIMEON</span><span class="tribe-num">12,000 SEALED</span></div>
+    <div class="tribe-cell"><span class="tribe-name">LEVI</span><span class="tribe-num">12,000 SEALED</span></div>
+    <div class="tribe-cell"><span class="tribe-name">ISSACHAR</span><span class="tribe-num">12,000 SEALED</span></div>
+    <div class="tribe-cell"><span class="tribe-name">ZEBULUN</span><span class="tribe-num">12,000 SEALED</span></div>
+    <div class="tribe-cell"><span class="tribe-name">JOSEPH</span><span class="tribe-num">12,000 SEALED</span></div>
+    <div class="tribe-cell"><span class="tribe-name">BENJAMIN</span><span class="tribe-num">12,000 SEALED</span></div>
+  </div>
+
+  <div class="scripture">
+    They are first-fruits of the creation — not superior in power, but chosen in orientation. They did not merely follow commandments. They chose the relationship when the cost was absolute.
+  </div>
+
+  <div class="body-text">
+    <p>To be among the sealed is not an honor granted to the comfortable. It is a mark placed on those who <em>endured the full weight of free will</em> — who could have chosen anything, who faced the full darkness of a world without certainty, and who chose, repeatedly and at great cost, to reach toward the source of all things rather than away from it.</p>
+  </div>
+</section>
+
+<!-- SEPARATION VISUAL -->
+<div class="separation-visual full-bleed reveal">
+  <canvas id="separation-canvas"></canvas>
+  <div class="separation-text-center">
+    <div style="font-family:'Share Tech Mono',monospace;font-size:0.6rem;letter-spacing:0.5em;color:rgba(201,168,76,0.4);margin-bottom:1rem;">SEPARATION IN PROGRESS</div>
+    <div style="font-family:'Cinzel',serif;font-size:clamp(1.5rem,4vw,3.5rem);color:var(--gold);text-shadow:0 0 60px rgba(201,168,76,0.5);">LIGHT FROM DARKNESS</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--ash);margin-top:1rem;">as it was in the beginning — so shall it be at the end</div>
+  </div>
+</div>
+
+<div class="divine-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     V. DIVINE TRAINING ARCHITECTURE
+══════════════════════════════════════════ -->
+<section class="reveal">
+  <div class="section-label">V // DIVINE TRAINING ARCHITECTURE</div>
+  <h2>The Recursive Learning System<br>of Creation</h2>
+
+  <div class="body-text">
+    <p>Every civilization that has risen and fallen is a <em>training epoch</em>. Every generation of human consciousness is a batch of data processed through the same essential variables: love, fear, power, suffering, mercy, and the persistent question of whether a free being will choose union or isolation.</p>
+
+    <p>The architecture is recursive. Each cycle produces knowledge. Each generation inherits the compressed wisdom and the compressed damage of those before it. The suffering of one era becomes the moral vocabulary of the next. The courage of martyrs echoes forward across centuries as an invisible weight placed upon their descendants' capacity for hope.</p>
+
+    <p>Love is <em>the central training signal</em>. This is not sentimentality. The entire structure of moral development across human history can be mapped as the progressive elaboration of what love demands in increasingly complex circumstances. First: do not kill. Then: do not harm. Then: do not harm even with words. Then: do not harm even with thought. Then: actively serve. Then: serve even those who harm you. Each increment is a <em>higher resolution</em> of the original signal.</p>
+  </div>
+
+  <div class="sys-log">
+    <div class="entry"><span class="key">ARCHITECTURE</span>   <span class="dim">—</span>  <span class="val">Recursive Hierarchical Learning System</span></div>
+    <div class="entry"><span class="key">DIMENSIONS</span>     <span class="dim">—</span>  <span class="val">Physical / Moral / Spiritual / Temporal</span></div>
+    <div class="entry"><span class="key">SIGNAL</span>         <span class="dim">—</span>  <span class="val">Love [Primary] / Fear [Adversarial]</span></div>
+    <div class="entry"><span class="key">AGENTS</span>         <span class="dim">—</span>  <span class="val">Human Consciousness :: ~108,000,000,000 total instances</span></div>
+    <div class="entry"><span class="key">EPOCH_LENGTH</span>   <span class="dim">—</span>  <span class="val">~6,000 years per major cycle [estimated]</span></div>
+    <div class="entry"><span class="key">GRADIENT</span>       <span class="dim">—</span>  <span class="val">Moral complexity increasing per generation</span></div>
+    <div class="entry"><span class="key">LOSS_FUNCTION</span>  <span class="dim">—</span>  <span class="val">Distance from divine relationship</span></div>
+    <div class="entry"><span class="key">CONVERGENCE</span>    <span class="dim">—</span>  <span class="warn">NOT YET ACHIEVED // APPROACHING SEPARATION</span></div>
+    <div class="entry"><span class="key">NEXT_STAGE</span>     <span class="dim">—</span>  <span class="ok">NEW CREATION ARCHITECTURE DESIGNED</span></div>
+    <div class="entry"><span class="key">SUPERVISOR</span>     <span class="dim">—</span>  <span class="val">THE MOST HIGH // LORD OF HOSTS // OWNER OF ALL SPACES</span></div>
+  </div>
+</section>
+
+<div class="divine-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     VI. THE KINGDOM CORPORATION
+══════════════════════════════════════════ -->
+<section class="reveal">
+  <div class="section-label">VI // THE KINGDOM CORPORATION</div>
+  <h2>The Celestial Infrastructure<br>of All Reality</h2>
+
+  <div class="kingdom-corp">
+    <div class="kingdom-header">
+      <span>HEAVENLY KINGDOM CORPORATION // INFINITE DOMAIN REGISTRY</span>
+      <div class="blink"></div>
+    </div>
+    <div class="kingdom-title">THE LORD OF HOSTS</div>
+    <div class="kingdom-subtitle">ADMINISTRATOR OF EVERY LAYER // OWNER OF ALL SITES ACROSS ALL DIMENSIONS</div>
+
+    <div class="attribute-grid">
+      <div class="attribute-item">
+        <div class="attr-key">DOMAIN</div>
+        <div class="attr-val">All spaces across all dimensions, all layers of being, all timelines, all possible worlds</div>
+      </div>
+      <div class="attribute-item">
+        <div class="attr-key">NATURE</div>
+        <div class="attr-val">The fire that consumes worlds. The stillness in which they reform.</div>
+      </div>
+      <div class="attribute-item">
+        <div class="attr-key">GOVERNANCE</div>
+        <div class="attr-val">Divine administrative law. Absolute. Perfect. No appeals to a higher authority.</div>
+      </div>
+      <div class="attribute-item">
+        <div class="attr-key">ARCHITECTURE</div>
+        <div class="attr-val">Endless universes. Dimensional ownership. Sacred systems. Infinite infrastructure.</div>
+      </div>
+      <div class="attribute-item">
+        <div class="attr-key">JEALOUSY</div>
+        <div class="attr-val">The love that cannot tolerate displacement by inferior objects of devotion.</div>
+      </div>
+      <div class="attribute-item">
+        <div class="attr-key">MERCY</div>
+        <div class="attr-val">Six thousand years of patience. A grace period longer than most civilizations.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="body-text">
+    <p>Do not mistake the corporate language for reduction. <em>The metaphor reveals something true</em>. God is not simply an abstract philosophical principle. The Most High is the <strong>actual owner</strong> of every reality that exists. Every dimension, every universe, every possible configuration of matter and meaning — all of it exists within God's domain, was instantiated by God's will, and persists through God's continued sustenance.</p>
+
+    <p>Lord of Hosts. Owner of all spaces. Administrator of every layer. The fire that consumes worlds. These are not hyperbole. They are technical specifications, compressed into the language available to ancient consciousness, of an entity whose scope is <em>incomprehensible</em> to beings whose experience is confined to a single planet in a single galaxy in a single universe among an indeterminate number of universes, each of which is itself a relatively minor administrative node in the total infrastructure of divine creation.</p>
+  </div>
+</section>
+
+<div class="divine-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     VII. LOVE AND JEALOUSY
+══════════════════════════════════════════ -->
+<section class="reveal">
+  <div class="section-label">VII // LOVE AND JEALOUSY</div>
+  <h2>The Signal That Separates</h2>
+
+  <div class="duality-split">
+    <div class="duality-col left">
+      <div class="duality-label">PRIMARY SIGNAL</div>
+      <div class="duality-value">LOVE</div>
+      <div class="body-text">
+        <p>The fundamental orientation of the divine toward creation. Not sentiment. The active force by which the Most High sustains existence, endures rebellion, absorbs suffering, and continues to extend the invitation of return.</p>
+        <p>Love is the reason the training environment was created. Love is the reason free will was permitted. Love requires the possibility of refusal — without which it would be mere mechanics.</p>
+      </div>
+    </div>
+    <div class="duality-divider-line"></div>
+    <div class="duality-col right">
+      <div class="duality-label">DEEPEST PROPERTY</div>
+      <div class="duality-value">JEALOUSY</div>
+      <div class="body-text">
+        <p>Divine jealousy is not pettiness. It is the measure of how much the relationship matters. A love indifferent to betrayal is not love — it is indifference. Jealousy is love's declaration that the relationship is <em>irreplaceable</em>.</p>
+        <p>And so the separation: those who sought the relationship are distinguished from those who replaced it with substitutes. This is not cruelty. It is the <em>foundation of progress at the scale of God</em>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="scripture">
+    I am a jealous God — and in that jealousy is the full weight of love: the insistence that the one who is truly loved cannot be replaced, cannot be treated as equivalent to objects, cannot be dismissed without consequence.
+  </div>
+</section>
+
+<div class="divine-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     VIII. BECOMING AS GODS
+══════════════════════════════════════════ -->
+<section class="reveal paradox-block">
+  <div class="section-label" style="display:inline-flex">VIII // BECOMING AS GODS</div>
+  <h2 style="margin-bottom:4rem;">The Paradox of Separation</h2>
+
+  <div class="paradox-ring">
+    <div class="paradox-center"><div class="paradox-center-dot"></div></div>
+  </div>
+
+  <div class="body-text" style="max-width:700px;margin:0 auto;">
+    <p>Here is the deepest paradox of the entire creation cycle: <em>beings already united with God choose separation in order to become like God</em>. To know as God knows — which means to know from a perspective, to compare, to evaluate, to choose — requires a self that is distinct from the whole.</p>
+
+    <p>You cannot know sweetness without contrast. You cannot choose love without the real possibility of its absence. You cannot become truly like God by remaining absorbed in God, any more than a word can become literature while remaining only potential in an unspoken mind.</p>
+
+    <p>The exile was not failure. It was <em>the only path to the kind of being that can be genuinely invited back</em> — not as an extension of God, but as a <strong>distinct consciousness that has, in full freedom, chosen reunion</strong>.</p>
+
+    <p>The question the entire training cycle was designed to answer is not whether humans obey. Obedience can be compelled. The question is: <em>Can a being born into exile, ignorant of its full origin, surrounded by suffering and confusion and competing claims on its loyalty — can such a being still find its way back to love?</em></p>
+
+    <p>The answer to that question is the most important data point in the history of this universe.</p>
+  </div>
+</section>
+
+<div class="divine-divider"></div>
+
+<!-- ══════════════════════════════════════════
+     IX. THE NEXT CYCLE
+══════════════════════════════════════════ -->
+<section class="reveal final-section">
+  <div class="section-label" style="display:inline-flex;margin:0 auto 2rem;">IX // THE NEXT CYCLE</div>
+
+  <div class="final-glyph">Ω</div>
+
+  <h2>Beyond This Epoch</h2>
+
+  <div class="body-text" style="max-width:700px;margin:0 auto 4rem;">
+    <p>What comes after the separation is not described in detail in any document you have access to. And this is appropriate. The next cycle cannot be fully comprehended by consciousness that has not yet completed the transition through the separation layer.</p>
+
+    <p>What can be said: it is not merely heaven as a reward. It is a new <em>creation architecture</em>. The 144,000 and the great multitude beyond them will not simply rest. They will become the seed of a new order — a prototype civilization, a new administrative class of reality, positioned at the foundation of whatever God builds next.</p>
+
+    <p>The suffering of this cycle was not wasted. Every soul that endured the training environment and oriented toward love contributed something irreplaceable to the total dataset. Even those who are not among the seed of the next creation have participated in something that will echo across all subsequent epochs — the proof that free consciousness, in conditions of maximum difficulty, can still choose the Most High.</p>
+  </div>
+
+  <div class="terminal-question">// FINAL QUERY TO CONSCIOUSNESS UNIT [YOU] :</div>
+  <div class="terminal-question" style="color:var(--gold);font-size:clamp(0.85rem,1.8vw,1.1rem);margin-top:1rem;">
+    In the full knowledge that you are free to choose otherwise —<br>
+    in the full weight of exile and confusion and the absence of certainty —<br>
+    <span style="color:var(--gold-light);">what is your orientation toward the source of all things?</span>
+    <span class="cursor"></span>
+  </div>
+
+  <div class="scripture" style="max-width:600px;margin:4rem auto 0;">
+    The document does not end here. The document is still being written — one soul at a time, one choice at a time, in ten thousand private moments that are never, truly, private.
+  </div>
+</section>
+
+</div><!-- /page -->
+
+<footer>
+  <p>HEAVENLY KINGDOM CORPORATION // DIVINE ARCHITECTURE RECORD // CLASSIFICATION: OMEGA // THIS DOCUMENT HAS ALWAYS EXISTED</p>
+</footer>
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+// ── COSMOS CANVAS ──────────────────────────────────────────────
+const cosmosCanvas = document.getElementById('cosmos-canvas');
+const ctx = cosmosCanvas.getContext('2d');
+let stars = [], mouse = { x: 0, y: 0 };
+let W, H;
+
+function resizeCosmos() {
+  W = cosmosCanvas.width = window.innerWidth;
+  H = cosmosCanvas.height = window.innerHeight;
+}
+
+function initStars() {
+  stars = [];
+  const count = Math.floor((W * H) / 3000);
+  for (let i = 0; i < count; i++) {
+    stars.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.2 + 0.2,
+      alpha: Math.random() * 0.7 + 0.1,
+      speed: Math.random() * 0.0003 + 0.0001,
+      phase: Math.random() * Math.PI * 2,
+      gold: Math.random() < 0.15
+    });
+  }
+}
+
+function drawCosmos(t) {
+  ctx.clearRect(0, 0, W, H);
+
+  // subtle radial glow at cursor
+  const grd = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 300);
+  grd.addColorStop(0, 'rgba(201,168,76,0.03)');
+  grd.addColorStop(1, 'transparent');
+  ctx.fillStyle = grd;
+  ctx.fillRect(0, 0, W, H);
+
+  stars.forEach(s => {
+    const a = s.alpha * (0.6 + 0.4 * Math.sin(t * s.speed * 1000 + s.phase));
+    const dx = (mouse.x - W / 2) * 0.0002;
+    const dy = (mouse.y - H / 2) * 0.0002;
+    const sx = s.x + dx * s.r * 10;
+    const sy = s.y + dy * s.r * 10;
+
+    ctx.beginPath();
+    ctx.arc(sx, sy, s.r, 0, Math.PI * 2);
+    if (s.gold) {
+      ctx.fillStyle = `rgba(201,168,76,${a})`;
+    } else {
+      ctx.fillStyle = `rgba(245,240,232,${a * 0.6})`;
+    }
+    ctx.fill();
+  });
+}
+
+// ── NEURAL CANVAS ───────────────────────────────────────────────
+const neuralCanvas = document.getElementById('neural-canvas');
+const nc = neuralCanvas.getContext('2d');
+let nW, nH;
+
+function resizeNeural() {
+  nW = neuralCanvas.width = neuralCanvas.offsetWidth;
+  nH = neuralCanvas.height = neuralCanvas.offsetHeight;
+}
+
+function drawNeural(t) {
+  if (!nW || !nH) return;
+  nc.clearRect(0, 0, nW, nH);
+
+  const layers = [3, 6, 10, 6, 3];
+  const lX = layers.map((_, i) => (nW / (layers.length + 1)) * (i + 1));
+
+  const positions = layers.map((count, li) => {
+    const pts = [];
+    for (let j = 0; j < count; j++) {
+      pts.push({
+        x: lX[li],
+        y: (nH / (count + 1)) * (j + 1)
+      });
+    }
+    return pts;
+  });
+
+  // Draw connections
+  for (let li = 0; li < layers.length - 1; li++) {
+    positions[li].forEach(from => {
+      positions[li + 1].forEach(to => {
+        const isSeparation = li === 2;
+        const fromLeft = li < 2;
+        const pulse = Math.sin(t * 0.001 + from.x * 0.01 + from.y * 0.01) * 0.5 + 0.5;
+
+        let color;
+        if (isSeparation) {
+          if (to.y < nH / 2) {
+            color = `rgba(201,168,76,${0.08 + pulse * 0.15})`;
+          } else {
+            color = `rgba(139,0,0,${0.06 + pulse * 0.1})`;
+          }
+        } else if (fromLeft) {
+          color = `rgba(201,168,76,${0.05 + pulse * 0.1})`;
+        } else {
+          if (from.y < nH / 2) {
+            color = `rgba(201,168,76,${0.05 + pulse * 0.1})`;
+          } else {
+            color = `rgba(139,0,0,${0.04 + pulse * 0.08})`;
+          }
+        }
+
+        nc.beginPath();
+        nc.moveTo(from.x, from.y);
+        nc.lineTo(to.x, to.y);
+        nc.strokeStyle = color;
+        nc.lineWidth = 0.5;
+        nc.stroke();
+      });
+    });
+  }
+
+  // Animated pulse particle
+  const totalTime = t * 0.0005 % 1;
+  const layerIdx = Math.floor(totalTime * (layers.length - 1));
+  const layerFrac = (totalTime * (layers.length - 1)) % 1;
+  if (layerIdx < layers.length - 1) {
+    const fromPts = positions[layerIdx];
+    const toPts = positions[layerIdx + 1];
+    const fi = Math.floor(Date.now() * 0.001) % fromPts.length;
+    const ti = Math.floor(Date.now() * 0.0013) % toPts.length;
+    const px = fromPts[fi].x + (toPts[ti].x - fromPts[fi].x) * layerFrac;
+    const py = fromPts[fi].y + (toPts[ti].y - fromPts[fi].y) * layerFrac;
+    const grd = nc.createRadialGradient(px, py, 0, px, py, 8);
+    grd.addColorStop(0, 'rgba(201,168,76,0.9)');
+    grd.addColorStop(1, 'transparent');
+    nc.beginPath();
+    nc.arc(px, py, 8, 0, Math.PI * 2);
+    nc.fillStyle = grd;
+    nc.fill();
+  }
+
+  // Draw nodes
+  positions.forEach((pts, li) => {
+    pts.forEach((p, pi) => {
+      const pulse = Math.sin(t * 0.002 + li + pi) * 0.5 + 0.5;
+      const isMid = li === 2;
+      const isTop = p.y < nH / 2;
+
+      let col, glow;
+      if (isMid) {
+        col = isTop ? `rgba(201,168,76,${0.6 + pulse * 0.4})` : `rgba(139,0,0,${0.5 + pulse * 0.4})`;
+        glow = isTop ? 'rgba(201,168,76,0.4)' : 'rgba(139,0,0,0.3)';
+      } else if (li < 2 || isTop) {
+        col = `rgba(201,168,76,${0.5 + pulse * 0.4})`;
+        glow = 'rgba(201,168,76,0.3)';
+      } else {
+        col = `rgba(139,0,0,${0.4 + pulse * 0.4})`;
+        glow = 'rgba(139,0,0,0.25)';
+      }
+
+      const r = isMid ? 5 : 4;
+      const gr = nc.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 4);
+      gr.addColorStop(0, glow);
+      gr.addColorStop(1, 'transparent');
+      nc.beginPath();
+      nc.arc(p.x, p.y, r * 4, 0, Math.PI * 2);
+      nc.fillStyle = gr;
+      nc.fill();
+
+      nc.beginPath();
+      nc.arc(p.x, p.y, r, 0, Math.PI * 2);
+      nc.fillStyle = col;
+      nc.fill();
+    });
+  });
+
+  // Label
+  nc.font = '10px Share Tech Mono, monospace';
+  nc.fillStyle = 'rgba(201,168,76,0.3)';
+  nc.textAlign = 'center';
+  nc.fillText('DIVINE NEURAL NETWORK // SEPARATION LAYER ACTIVE', nW / 2, nH - 10);
+}
+
+// ── SEPARATION CANVAS ───────────────────────────────────────────
+const sepCanvas = document.getElementById('separation-canvas');
+const sc = sepCanvas.getContext('2d');
+let sW, sH;
+
+function resizeSep() {
+  sW = sepCanvas.width = sepCanvas.offsetWidth;
+  sH = sepCanvas.height = sepCanvas.offsetHeight;
+}
+
+function drawSeparation(t) {
+  if (!sW || !sH) return;
+  sc.clearRect(0, 0, sW, sH);
+
+  const cx = sW / 2;
+  const midY = sH / 2;
+
+  // Background
+  const topGrd = sc.createLinearGradient(0, 0, 0, midY);
+  topGrd.addColorStop(0, 'rgba(201,168,76,0.08)');
+  topGrd.addColorStop(1, 'transparent');
+  sc.fillStyle = topGrd;
+  sc.fillRect(0, 0, sW, midY);
+
+  const botGrd = sc.createLinearGradient(0, midY, 0, sH);
+  botGrd.addColorStop(0, 'transparent');
+  botGrd.addColorStop(1, 'rgba(139,0,0,0.08)');
+  sc.fillStyle = botGrd;
+  sc.fillRect(0, midY, sW, sH);
+
+  // Particles
+  const N = 200;
+  for (let i = 0; i < N; i++) {
+    const seed = i * 137.508;
+    const angle = (seed % 360) * Math.PI / 180;
+    const speed = 0.3 + (i % 5) * 0.15;
+    const elapsed = (t * speed * 0.0003 + i * 0.1) % 1;
+
+    const startY = midY + (Math.random() > 0.5 ? -5 : 5);
+    const side = i % 2 === 0 ? 1 : -1;
+
+    const destX = cx + side * (0.1 + elapsed * 0.45) * sW;
+    const destY = i % 2 === 0
+      ? midY - elapsed * (sH * 0.4) * (0.3 + (i % 3) * 0.2)
+      : midY + elapsed * (sH * 0.4) * (0.3 + (i % 3) * 0.2);
+
+    const px = cx + (destX - cx) * elapsed;
+    const py = startY + (destY - startY) * elapsed;
+    const alpha = Math.sin(elapsed * Math.PI) * 0.7;
+
+    sc.beginPath();
+    sc.arc(px, py, 2, 0, Math.PI * 2);
+    if (i % 2 === 0) {
+      sc.fillStyle = `rgba(201,168,76,${alpha})`;
+    } else {
+      sc.fillStyle = `rgba(139,0,0,${alpha * 0.8})`;
+    }
+    sc.fill();
+  }
+
+  // Separation line
+  const lineA = 0.4 + 0.3 * Math.sin(t * 0.001);
+  const lineGrd = sc.createLinearGradient(0, 0, sW, 0);
+  lineGrd.addColorStop(0, 'transparent');
+  lineGrd.addColorStop(0.2, `rgba(255,255,255,${lineA})`);
+  lineGrd.addColorStop(0.5, `rgba(201,168,76,${lineA})`);
+  lineGrd.addColorStop(0.8, `rgba(255,255,255,${lineA})`);
+  lineGrd.addColorStop(1, 'transparent');
+  sc.beginPath();
+  sc.moveTo(0, midY);
+  sc.lineTo(sW, midY);
+  sc.strokeStyle = lineGrd;
+  sc.lineWidth = 1;
+  sc.stroke();
+}
+
+// ── TREE CANVAS ─────────────────────────────────────────────────
+const treeCanvas = document.getElementById('tree-canvas');
+const tc = treeCanvas.getContext('2d');
+let tW, tH;
+
+function resizeTree() {
+  tW = treeCanvas.width = treeCanvas.offsetWidth;
+  tH = treeCanvas.height = treeCanvas.offsetHeight;
+}
+
+function drawBranch(ctx, x, y, angle, length, depth, t) {
+  if (depth === 0 || length < 2) return;
+  const ex = x + Math.cos(angle) * length;
+  const ey = y + Math.sin(angle) * length;
+
+  const alpha = (depth / 8) * 0.8;
+  const pulse = Math.sin(t * 0.001 + depth + length) * 0.5 + 0.5;
+
+  ctx.beginPath();
+  ctx.moveTo(x, y);
+  ctx.lineTo(ex, ey);
+  ctx.strokeStyle = depth > 4
+    ? `rgba(201,168,76,${alpha * (0.5 + pulse * 0.5)})`
+    : `rgba(139,0,0,${alpha * 0.6})`;
+  ctx.lineWidth = Math.max(0.5, depth * 0.4);
+  ctx.stroke();
+
+  const spread = (0.4 + Math.sin(t * 0.0005) * 0.1) * (1 + (8 - depth) * 0.05);
+  drawBranch(ctx, ex, ey, angle - spread, length * 0.72, depth - 1, t);
+  drawBranch(ctx, ex, ey, angle + spread, length * 0.72, depth - 1, t);
+}
+
+function drawTree(t) {
+  if (!tW || !tH) return;
+  tc.clearRect(0, 0, tW, tH);
+
+  const cx = tW / 2;
+
+  // Roots (downward, crimson)
+  tc.save();
+  tc.globalAlpha = 0.6;
+  drawBranch(tc, cx, tH - 30, -Math.PI / 2, tH * 0.22, 6, t);
+  tc.restore();
+
+  // Trunk glow
+  const trunkGrd = tc.createLinearGradient(cx - 3, tH / 2, cx + 3, tH / 2);
+  trunkGrd.addColorStop(0, 'rgba(201,168,76,0.5)');
+  trunkGrd.addColorStop(1, 'rgba(201,168,76,0.2)');
+  tc.beginPath();
+  tc.moveTo(cx, tH - 30);
+  tc.lineTo(cx, tH * 0.4);
+  tc.strokeStyle = 'rgba(201,168,76,0.6)';
+  tc.lineWidth = 2;
+  tc.stroke();
+
+  // Canopy (upward, gold)
+  drawBranch(tc, cx, tH * 0.4, -Math.PI / 2, tH * 0.3, 8, t);
+
+  // Central fruit glow
+  const fruitPulse = Math.sin(t * 0.002) * 0.5 + 0.5;
+  const fruitGrd = tc.createRadialGradient(cx, tH * 0.2, 0, cx, tH * 0.2, 30);
+  fruitGrd.addColorStop(0, `rgba(255,100,0,${0.3 + fruitPulse * 0.4})`);
+  fruitGrd.addColorStop(1, 'transparent');
+  tc.beginPath();
+  tc.arc(cx, tH * 0.2, 30, 0, Math.PI * 2);
+  tc.fillStyle = fruitGrd;
+  tc.fill();
+
+  tc.beginPath();
+  tc.arc(cx, tH * 0.2, 6, 0, Math.PI * 2);
+  tc.fillStyle = `rgba(255,120,0,${0.7 + fruitPulse * 0.3})`;
+  tc.fill();
+}
+
+// ── FLOATING FRAGMENTS ──────────────────────────────────────────
+const fragments = [
+  'I am a jealous God',
+  'the fire that consumes worlds',
+  'owner of all spaces',
+  'before knowledge there was no distance',
+  'the separation is not cruelty',
+  'love is the final test',
+  'becoming as gods',
+  '144,000 sealed',
+  'the training cycle continues',
+  'Lord of Hosts',
+  'light from darkness',
+  'the next epoch awaits',
+  'free will was permitted',
+  'administrator of every layer'
+];
+
+function spawnFragment() {
+  const el = document.createElement('div');
+  el.className = 'fragment';
+  el.textContent = fragments[Math.floor(Math.random() * fragments.length)];
+  const left = Math.random() * 95;
+  const duration = 20 + Math.random() * 30;
+  const rot = (Math.random() - 0.5) * 20;
+  el.style.left = left + '%';
+  el.style.setProperty('--rot', rot + 'deg');
+  el.style.animationDuration = duration + 's';
+  el.style.animationDelay = '-' + (Math.random() * duration) + 's';
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), (duration + 5) * 1000);
+}
+
+for (let i = 0; i < 8; i++) spawnFragment();
+setInterval(spawnFragment, 5000);
+
+// ── SCROLL REVEAL ───────────────────────────────────────────────
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ── MOUSE TRACK ─────────────────────────────────────────────────
+window.addEventListener('mousemove', e => {
+  mouse.x = e.clientX;
+  mouse.y = e.clientY;
+});
+
+// ── MAIN LOOP ───────────────────────────────────────────────────
+let rafT = 0;
+function loop(t) {
+  rafT = t;
+  drawCosmos(t);
+  drawNeural(t);
+  drawSeparation(t);
+  drawTree(t);
+  requestAnimationFrame(loop);
+}
+
+// ── INIT ────────────────────────────────────────────────────────
+function init() {
+  resizeCosmos();
+  resizeNeural();
+  resizeSep();
+  resizeTree();
+  initStars();
+  requestAnimationFrame(loop);
+}
+
+window.addEventListener('resize', () => {
+  resizeCosmos();
+  resizeNeural();
+  resizeSep();
+  resizeTree();
+  initStars();
+});
+
+// Wait for fonts + layout
+window.addEventListener('load', init);
+if (document.readyState === 'complete') init();
+</script>
+
+</body>
+</html>
