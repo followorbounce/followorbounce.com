@@ -212,3 +212,12 @@
   url: "/p/the-word-is-love/"
   featured: "true"
   year: "2026"
+
+- title: "Rewriting the Self"
+  category: "web"
+  tags: ["Philosophy", "Identity", "Technology"]
+  description: "A philosophical exploration of the concept of selfhood in the digital age, examining how technology is reshaping our understanding of identity and consciousness."
+  cover: "/assets/images/portfolio/rewriting-the-self.svg"
+  url: "/p/rewriting-the-self/"
+ # featured: "true"
+  year: "2026"

@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="50%" r="70%">
+      <stop offset="0%" stop-color="#0f0f0f"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </radialGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c8a96e" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#c8a96e" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4a7fa5" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#4a7fa5" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur-sm">
+      <feGaussianBlur stdDeviation="2"/>
+    </filter>
+    <filter id="blur-lg">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="blur-xl">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Atmospheric glows -->
+  <ellipse cx="600" cy="315" rx="320" ry="200" fill="url(#glow1)" filter="url(#blur-xl)"/>
+  <ellipse cx="380" cy="280" rx="200" ry="150" fill="url(#glow2)" filter="url(#blur-xl)"/>
+
+  <!-- Subtle grid texture -->
+  <g opacity="0.04" stroke="#c8a96e" stroke-width="0.5">
+    <line x1="0" y1="105" x2="1200" y2="105"/>
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="0" y1="525" x2="1200" y2="525"/>
+    <line x1="150" y1="0" x2="150" y2="630"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="450" y1="0" x2="450" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="750" y1="0" x2="750" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+    <line x1="1050" y1="0" x2="1050" y2="630"/>
+  </g>
+
+  <!-- Neural network paths - left hemisphere (blue-ish, logic) -->
+  <g opacity="0.18" stroke="#4a7fa5" stroke-width="1" fill="none">
+    <path d="M 200 200 Q 280 150 350 220 Q 410 280 470 240"/>
+    <path d="M 160 300 Q 240 260 310 310 Q 370 360 440 320"/>
+    <path d="M 220 380 Q 300 340 360 400 Q 420 450 480 410"/>
+    <path d="M 180 250 Q 260 210 320 270 Q 390 330 450 280"/>
+    <path d="M 140 350 Q 220 310 290 360 Q 350 410 420 370"/>
+    <path d="M 250 160 Q 320 120 390 175 Q 450 225 510 190"/>
+    <path d="M 130 430 Q 210 390 280 440 Q 340 490 410 450"/>
+  </g>
+
+  <!-- Neural network paths - right hemisphere (gold, intuition) -->
+  <g opacity="0.18" stroke="#c8a96e" stroke-width="1" fill="none">
+    <path d="M 750 200 Q 820 150 890 210 Q 950 270 1020 230"/>
+    <path d="M 730 300 Q 800 250 870 310 Q 940 370 1010 320"/>
+    <path d="M 760 380 Q 840 330 910 390 Q 970 450 1040 400"/>
+    <path d="M 710 250 Q 790 200 860 260 Q 930 320 1000 270"/>
+    <path d="M 740 440 Q 820 390 900 450 Q 960 500 1030 460"/>
+    <path d="M 770 160 Q 850 110 920 170 Q 990 230 1060 185"/>
+    <path d="M 690 350 Q 770 310 840 370 Q 910 420 980 380"/>
+  </g>
+
+  <!-- Cross-hemisphere bridge paths (the key concept) -->
+  <g opacity="0.12" stroke="#ffffff" stroke-width="0.8" fill="none" stroke-dasharray="4,6">
+    <path d="M 470 240 Q 540 200 600 220 Q 660 240 730 220"/>
+    <path d="M 480 310 Q 545 280 600 295 Q 660 310 720 295"/>
+    <path d="M 450 380 Q 530 350 600 365 Q 670 380 750 360"/>
+    <path d="M 510 440 Q 560 420 600 430 Q 645 440 690 425"/>
+  </g>
+
+  <!-- Nodes - left hemisphere -->
+  <g fill="#4a7fa5">
+    <circle cx="200" cy="200" r="3" opacity="0.6"/>
+    <circle cx="350" cy="220" r="4" opacity="0.7"/>
+    <circle cx="470" cy="240" r="3" opacity="0.5"/>
+    <circle cx="310" cy="310" r="3.5" opacity="0.6"/>
+    <circle cx="440" cy="320" r="3" opacity="0.5"/>
+    <circle cx="360" cy="400" r="4" opacity="0.7"/>
+    <circle cx="290" cy="360" r="3" opacity="0.5"/>
+    <circle cx="160" cy="300" r="3" opacity="0.4"/>
+    <circle cx="390" cy="175" r="3.5" opacity="0.6"/>
+    <circle cx="280" cy="440" r="3" opacity="0.5"/>
+  </g>
+
+  <!-- Nodes - right hemisphere -->
+  <g fill="#c8a96e">
+    <circle cx="890" cy="210" r="3" opacity="0.6"/>
+    <circle cx="760" cy="200" r="4" opacity="0.7"/>
+    <circle cx="750" cy="300" r="3" opacity="0.5"/>
+    <circle cx="870" cy="310" r="3.5" opacity="0.6"/>
+    <circle cx="1010" cy="320" r="3" opacity="0.5"/>
+    <circle cx="910" cy="390" r="4" opacity="0.7"/>
+    <circle cx="840" cy="370" r="3" opacity="0.5"/>
+    <circle cx="1010" cy="230" r="3" opacity="0.4"/>
+    <circle cx="920" cy="170" r="3.5" opacity="0.6"/>
+    <circle cx="900" cy="450" r="3" opacity="0.5"/>
+  </g>
+
+  <!-- Central corpus callosum / bridge node -->
+  <circle cx="600" cy="315" r="28" fill="none" stroke="#c8a96e" stroke-width="0.6" opacity="0.25"/>
+  <circle cx="600" cy="315" r="18" fill="none" stroke="#c8a96e" stroke-width="0.8" opacity="0.35"/>
+  <circle cx="600" cy="315" r="8" fill="#c8a96e" opacity="0.5"/>
+  <circle cx="600" cy="315" r="4" fill="#c8a96e" opacity="0.9" filter="url(#blur-sm)"/>
+  <circle cx="600" cy="315" r="4" fill="#e8c98e"/>
+
+  <!-- Glowing bridge nodes -->
+  <circle cx="530" cy="295" r="3" fill="#9ab8c8" opacity="0.7"/>
+  <circle cx="670" cy="295" r="3" fill="#c8a96e" opacity="0.7"/>
+
+  <!-- Dividing line - corpus callosum metaphor -->
+  <line x1="600" y1="100" x2="600" y2="530" stroke="#ffffff" stroke-width="0.5" opacity="0.06" stroke-dasharray="3,8"/>
+
+  <!-- Bright accent nodes with glow -->
+  <circle cx="350" cy="220" r="6" fill="#4a7fa5" opacity="0.3" filter="url(#blur-sm)"/>
+  <circle cx="350" cy="220" r="2.5" fill="#7ab0d0" opacity="0.9"/>
+
+  <circle cx="850" cy="230" r="6" fill="#c8a96e" opacity="0.3" filter="url(#blur-sm)"/>
+  <circle cx="850" cy="230" r="2.5" fill="#e0c080" opacity="0.9"/>
+
+  <!-- Horizontal rule top -->
+  <line x1="80" y1="88" x2="1120" y2="88" stroke="#c8a96e" stroke-width="0.4" opacity="0.3"/>
+  <!-- Horizontal rule bottom -->
+  <line x1="80" y1="542" x2="1120" y2="542" stroke="#c8a96e" stroke-width="0.4" opacity="0.3"/>
+
+  <!-- Corner marks -->
+  <g stroke="#c8a96e" stroke-width="0.8" opacity="0.4" fill="none">
+    <path d="M 80 88 L 80 105"/>
+    <path d="M 1120 88 L 1120 105"/>
+    <path d="M 80 542 L 80 525"/>
+    <path d="M 1120 542 L 1120 525"/>
+  </g>
+
+  <!-- Typography - Title -->
+  <text x="600" y="168" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="400" fill="#e8e0d0" text-anchor="middle" letter-spacing="3" opacity="0.92">REWRITING THE SELF</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="206" font-family="Georgia, 'Times New Roman', serif" font-size="15" fill="#c8a96e" text-anchor="middle" letter-spacing="8" opacity="0.75" font-style="italic">On Habit, Neural Rewiring &amp; the Architecture of Consciousness</text>
+
+  <!-- Small decorative em dash ornament -->
+  <text x="600" y="235" font-family="Georgia, serif" font-size="11" fill="#c8a96e" text-anchor="middle" opacity="0.4" letter-spacing="6">— ◆ —</text>
+
+  <!-- Bottom label -->
+  <text x="600" y="522" font-family="'Courier New', monospace" font-size="10" fill="#c8a96e" text-anchor="middle" letter-spacing="4" opacity="0.45">FOLLOWORBOUNCE.COM · ESSAY · 2026</text>
+</svg>
