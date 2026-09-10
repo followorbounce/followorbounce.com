@@ -1,0 +1,322 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// _sections.scss — listing rows, offers page, home extras, footer nav
+// Uses tokens from main.scss: --ink --paper --rust --slate --fog --line
+// ─────────────────────────────────────────────────────────────────────────────
+
+// ── SECTION LABEL ────────────────────────────────────────────────────────────
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: .62rem;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--fog);
+  margin: 3.5rem 0 1rem;
+}
+
+// ── CONTENT ROW LIST (Writing, Reference, Home latest) ───────────────────────
+.content-list { border-top: var(--line); }
+
+.content-row {
+  border-bottom: var(--line);
+
+  &__link {
+    display: grid;
+    grid-template-columns: 4rem 1fr auto;
+    gap: 1.2rem;
+    align-items: baseline;
+    padding: 1.1rem 0;
+    text-decoration: none;
+    color: var(--ink);
+    transition: color .18s;
+
+    &:hover { color: var(--rust); }
+    &:hover .content-row__summary { color: var(--slate); }
+  }
+
+  &__year {
+    font-family: 'DM Mono', monospace;
+    font-size: .62rem;
+    letter-spacing: .12em;
+    color: var(--fog);
+  }
+
+  &__body { display: flex; flex-direction: column; gap: .35rem; }
+
+  &__title {
+    font-family: 'DM Mono', monospace;
+    font-size: .9rem;
+    letter-spacing: .02em;
+  }
+
+  &__summary {
+    font-size: .75rem;
+    line-height: 1.65;
+    color: var(--fog);
+    max-width: 60ch;
+    transition: color .18s;
+  }
+
+  &__tags {
+    font-family: 'DM Mono', monospace;
+    font-size: .58rem;
+    letter-spacing: .08em;
+    color: var(--fog);
+    text-align: right;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 620px) {
+    &__link { grid-template-columns: 3rem 1fr; }
+    &__tags { display: none; }
+  }
+}
+
+// ── CARD META (Work cards: client · role) ────────────────────────────────────
+.pf-card__meta {
+  font-family: 'DM Mono', monospace;
+  font-size: .62rem;
+  letter-spacing: .06em;
+  color: var(--rust);
+  text-transform: uppercase;
+}
+
+// ── HOME EXTRAS ─────────────────────────────────────────────────────────────
+.card--accent {
+  background: var(--ink);
+  color: var(--paper);
+  .card-num, .card-body { color: var(--fog); }
+  &:hover { background: var(--rust); color: var(--paper);
+    .card-num, .card-body { color: rgba(244,240,230,.8); } }
+}
+
+.home-latest {
+  margin-top: 4.5rem;
+  padding-top: 3rem;
+  border-top: var(--line);
+
+  .eyebrow { margin-bottom: 1.5rem; }
+  &__all {
+    margin-top: 1.4rem;
+    font-family: 'DM Mono', monospace;
+    font-size: .72rem;
+    a { color: var(--rust); text-decoration: none; &:hover { text-decoration: underline; } }
+  }
+}
+
+// ── GENERIC SECTION CTA ─────────────────────────────────────────────────────
+.section-cta {
+  margin-top: 4.5rem;
+  padding: 3rem 2rem;
+  border: var(--line);
+  text-align: center;
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.6rem, 4vw, 2.6rem);
+    margin: .4rem 0 1.5rem;
+  }
+
+  &__btn {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: .78rem;
+    letter-spacing: .06em;
+    padding: .8rem 1.6rem;
+    border: var(--line);
+    text-decoration: none;
+    color: var(--ink);
+    transition: background .2s, color .2s;
+    &:hover { background: var(--ink); color: var(--paper); }
+  }
+}
+
+// ── OFFERS PAGE ─────────────────────────────────────────────────────────────
+.offers {
+  border-left: var(--line);
+  border-top: var(--line);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  @media (max-width: 640px) { grid-template-columns: 1fr; }
+}
+
+.offer {
+  border-right: var(--line);
+  border-bottom: var(--line);
+  padding: 1.6rem 1.6rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: .9rem;
+
+  &__name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+
+  &__meta {
+    font-family: 'DM Mono', monospace;
+    font-size: .62rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--fog);
+    span + span::before { content: ""; }
+  }
+
+  &__summary {
+    font-size: .82rem;
+    line-height: 1.7;
+    color: var(--slate);
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    margin-top: auto;
+
+    li {
+      font-size: .74rem;
+      line-height: 1.55;
+      color: var(--slate);
+      padding-left: 1.1rem;
+      position: relative;
+      &::before { content: "→"; position: absolute; left: 0; color: var(--rust); }
+    }
+  }
+}
+
+.offers-addons .tag-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+
+  li {
+    font-family: 'DM Mono', monospace;
+    font-size: .68rem;
+    letter-spacing: .04em;
+    padding: .4rem .8rem;
+    border: var(--line);
+  }
+}
+
+.process {
+  list-style: none;
+  counter-reset: step;
+  border-top: var(--line);
+
+  &__step {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1.2rem;
+    padding: 1.4rem 0;
+    border-bottom: var(--line);
+  }
+
+  &__num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    color: var(--rust);
+    line-height: 1;
+  }
+
+  &__name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.15rem;
+    margin-bottom: .3rem;
+  }
+
+  p { font-size: .8rem; line-height: 1.7; color: var(--slate); max-width: 58ch; }
+}
+
+.no-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+
+  li {
+    font-size: .8rem;
+    color: var(--slate);
+    padding-left: 1.3rem;
+    position: relative;
+    &::before { content: "✕"; position: absolute; left: 0; color: var(--fog); }
+  }
+}
+
+.offers-proof {
+  .pf-grid { margin-top: 1rem; }
+  &__link {
+    margin-top: 1.2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: .72rem;
+    a { color: var(--rust); text-decoration: none; &:hover { text-decoration: underline; } }
+  }
+}
+
+.faq {
+  border-top: var(--line);
+
+  dt {
+    font-family: 'DM Mono', monospace;
+    font-size: .82rem;
+    letter-spacing: .02em;
+    padding-top: 1.2rem;
+  }
+  dd {
+    font-size: .8rem;
+    line-height: 1.7;
+    color: var(--slate);
+    max-width: 62ch;
+    padding: .5rem 0 1.2rem;
+    border-bottom: var(--line);
+    margin: 0;
+  }
+}
+
+// select fields inherit .form-field but need an arrow affordance
+select.form-field {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--ink) 50%),
+    linear-gradient(135deg, var(--ink) 50%, transparent 50%);
+  background-position: calc(100% - 20px) center, calc(100% - 15px) center;
+  background-size: 5px 5px, 5px 5px;
+  background-repeat: no-repeat;
+  padding-right: 2.5rem;
+}
+
+.contact-direct {
+  margin-top: 1.6rem;
+  font-family: 'DM Mono', monospace;
+  font-size: .78rem;
+  color: var(--slate);
+  a { color: var(--rust); }
+}
+
+// ── FOOTER ──────────────────────────────────────────────────────────────────
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+
+  a {
+    font-family: 'DM Mono', monospace;
+    font-size: .68rem;
+    letter-spacing: .06em;
+    color: var(--fog);
+    text-decoration: none;
+    &:hover { color: var(--rust); }
+  }
+}

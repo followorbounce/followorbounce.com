@@ -1,51 +1,51 @@
 ---
 layout: default
 title: "Follow or Bounce"
+description: "Personal site of D.V. — writing on technology and consciousness, maintained reference tools, and Follow or Bounce, a one-person studio for AI, agentic systems, and the web."
 ---
 
 <p class="eyebrow">Follow or Bounce</p>
 <h1>Ideas that <em>stick</em>,<br>or they don't.</h1>
 <p class="desc">
-  A publication at the intersection of technology, literature,
-  and the agreements that hold them together.
-  Signal over noise. Always.
+  Personal site of <strong>D.V.</strong> — engineer and designer.
+  Writing, reference tools, and a one-person studio.
+  Signal over noise.
 </p>
 
 <div class="cards">
-  <a class="card" href="{{ '/about/' | relative_url }}">
-    <p class="card-num">00 — About</p>
-    <p class="card-title">Who We Are</p>
-    <p class="card-body">Our mission, our editors, and why we built this platform from the ground up.</p>
+  <a class="card" href="{{ '/work/' | relative_url }}">
+    <p class="card-num">01 — Work</p>
+    <p class="card-title">Selected Projects</p>
+    <p class="card-body">Identity systems, static sites, and interactive builds for clients and myself.</p>
   </a>
-  <a class="card" href="{{ '/technology/' | relative_url }}">
-    <p class="card-num">01 — Technology</p>
-    <p class="card-title">Tech &amp; Tools</p>
-    <p class="card-body">Deep dives into software, infrastructure, and the tools shaping how we work and think.</p>
+  <a class="card" href="{{ '/writing/' | relative_url }}">
+    <p class="card-num">02 — Writing</p>
+    <p class="card-title">Essays &amp; Artifacts</p>
+    <p class="card-body">Long-form and interactive pieces on technology, consciousness, and the design of belief.</p>
   </a>
-  <a class="card" href="{{ '/literature/' | relative_url }}">
-    <p class="card-num">02 — Literature</p>
-    <p class="card-title">Writing &amp; Ideas</p>
-    <p class="card-body">Reviews, essays, and long-form pieces on the books and ideas that define our time.</p>
+  <a class="card" href="{{ '/reference/' | relative_url }}">
+    <p class="card-num">03 — Reference</p>
+    <p class="card-title">Guides &amp; Tools</p>
+    <p class="card-body">Maintained references for radio, marine communication, and access control. Free to use.</p>
   </a>
-  <a class="card" href="{{ '/contracts/' | relative_url }}">
-    <p class="card-num">03 — Contracts</p>
-    <p class="card-title">Law &amp; Agreements</p>
-    <p class="card-body">Plain-language breakdowns of the frameworks, deals, and terms governing the digital world.</p>
+  <a class="card card--accent" href="{{ '/offers/' | relative_url }}">
+    <p class="card-num">04 — Offers</p>
+    <p class="card-title">Hire the Studio</p>
+    <p class="card-body">AI &amp; agentic systems, AI integration, technical advisory, and fast web builds.</p>
   </a>
 </div>
 
-<section class="subscribe-section" id="subscribe">
-  <p class="eyebrow">Subscribe</p>
-  <h2>Get in touch</h2>
-  <form class="contact-form" data-email="followorbounce@gmail.com">
-    <input class="form-field" type="text" name="name" placeholder="Your name" required>
-    <input class="form-field" type="email" name="email" placeholder="Your email" required>
-    <textarea class="form-field" name="message" placeholder="Your message" rows="5" required></textarea>
-    <button class="form-submit" type="submit">Send →</button>
-  </form>
-  <div class="form-success" style="display:none;">
-    <p class="eyebrow">Message sent</p>
-    <h2>Thank you.</h2>
-    <p>We received your message and will get back to you soon.</p>
-  </div>
+<section class="home-latest" aria-label="Latest writing">
+  <p class="eyebrow">Latest writing</p>
+  {% assign latest = site.data.writing | sort: "year" | reverse %}
+  {% for item in latest limit:4 %}
+  <article class="content-row">
+    <a class="content-row__link" href="{{ item.link | relative_url }}">
+      <span class="content-row__year">{{ item.year }}</span>
+      <span class="content-row__body"><span class="content-row__title">{{ item.title }}</span></span>
+      {% if item.tags %}<span class="content-row__tags">{{ item.tags | join: " · " }}</span>{% endif %}
+    </a>
+  </article>
+  {% endfor %}
+  <p class="home-latest__all"><a href="{{ '/writing/' | relative_url }}">All writing →</a></p>
 </section>

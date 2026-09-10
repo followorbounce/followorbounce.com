@@ -1,6 +1,9 @@
 title:       "Follow or Bounce"
-description: "A publication at the intersection of technology, literature, and the agreements that hold them together."
-author:      "Follow or Bounce"
+description: "Personal site of D.V. — writing on technology and consciousness, reference tools, and Follow or Bounce, a studio for AI, agentic systems, and the web."
+author:      "D.V."
+byline:      "Follow or Bounce"
+studio:      "Follow or Bounce"
+email:       "followorbounce@gmail.com"
 
 baseurl: ""
 url:     "https://followorbounce.com"
@@ -14,6 +17,10 @@ sass:
   sass_dir: _sass
   style:    compressed
 
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -25,28 +32,17 @@ exclude:
   - "*.swp"
   - "*.swo"
 
-# Site-wide data used in templates
-issue_number: "01"
-established:  "2024"
+established: "2024"
 
 navigation:
-  - title: "About"
-    url:   "/about/"
   - title: "Work"
     url:   "/work/"
-  - title: "Technology"
-    url:   "/technology/"
-  - title: "Literature"
-    url:   "/literature/"
-  - title: "Contracts"
-    url:   "/contracts/"
-    children:
-      - title: "Digital Law"
-        url:   "/contracts/digital-law/"
-      - title: "Open Source"
-        url:   "/contracts/open-source/"
-      - title: "Platform Terms"
-        url:   "/contracts/platform-terms/"
-  - title: "Subscribe ↗"
-    url:   "/subscribe/"
+  - title: "Writing"
+    url:   "/writing/"
+  - title: "Reference"
+    url:   "/reference/"
+  - title: "Offers"
+    url:   "/offers/"
+  - title: "Contact ↗"
+    url:   "/contact/"
     action: true

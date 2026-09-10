@@ -1,43 +1,45 @@
 ---
 layout: default
-title: "Who We Are"
+title: "About"
+description: "About D.V. and Follow or Bounce — a one-person studio for AI, agentic systems, and the web."
 permalink: /about/
 ---
 
 <div class="page-hero">
   <p class="eyebrow">About</p>
-  <h1>Who We Are</h1>
-  <p class="subtitle">A publication at the intersection of technology, literature, and the agreements that hold them together.</p>
+  <h1>About</h1>
+  <p class="subtitle">This is a personal site. I write, I build reference tools, and I run <em>Follow or Bounce</em> — a one-person studio.</p>
 </div>
 
 <div class="page-content">
 
-## Our Mission
+## The short version
 
-Follow or Bounce is built on a simple premise: ideas either have gravity, or they don't. We don't chase trends — we chase clarity.
+I'm an engineer and designer. I go by <strong>D.V.</strong> here. Follow or Bounce started as a place to publish long-form writing and turned into the name I build client work under.
 
-We exist at the intersection of **technology**, **literature**, and the **legal frameworks** that hold the digital world together. Our writing is long-form, carefully sourced, and written for readers who want substance over speed.
-
----
-
-## Why We Built This
-
-Every publication eventually faces a choice: go broad and shallow, or stay focused and deep. We chose deep.
-
-There are plenty of sources for breaking news and hot takes. What's harder to find is writing that treats its readers as intelligent adults — writing that explores *why* something matters, not just *that* it happened.
+The premise behind the name: an idea either has gravity or it doesn't. Follow it, or bounce. I try to apply that to what I make — small scope, working software, no decoration for its own sake.
 
 ---
 
-## The Editors
+## What's on this site
 
-We're a small team of writers, researchers, and practitioners who care deeply about the overlap between technology and culture. We write about what we know, and we're honest about what we don't.
+- **[Work]({{ '/work/' | relative_url }})** — client and studio projects: identity systems, static sites, interactive builds.
+- **[Writing]({{ '/writing/' | relative_url }})** — essays and interactive pieces on technology, consciousness, theology, and the design of belief. Each is a self-contained page.
+- **[Reference]({{ '/reference/' | relative_url }})** — practical guides and tools I keep maintained, mostly radio and marine communication. Free to use.
+- **[Offers]({{ '/offers/' | relative_url }})** — what Follow or Bounce does now: AI and agentic systems, AI integration, technical advisory, and fast web builds.
 
 ---
 
-## Signal Over Noise
+## How I work
 
-Our editorial rule is simple: if a piece doesn't earn its place in your inbox, it doesn't get published. We'd rather send one excellent piece a month than five forgettable ones a week.
+Direct contact, fixed scope where scope can be fixed, and software you can run rather than slides about software. I'll tell you early if I'm the wrong fit for something.
 
-[Subscribe →](/subscribe/)
+I also keep a broader index of interests — space, the Maya calendar, radio, time and perception — at [followorbounce.github.io](https://followorbounce.github.io/).
+
+---
+
+## Contact
+
+Project inquiries go through the brief on [Offers]({{ '/offers/' | relative_url }}). Anything else: [{{ site.email }}](mailto:{{ site.email }}) or the [contact form]({{ '/contact/' | relative_url }}).
 
 </div>

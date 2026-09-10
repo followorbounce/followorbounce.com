@@ -1,0 +1,82 @@
+# _data/offers.yml — services listed on /offers/
+# Set `price` to real numbers when ready (e.g. "from $2,500"). "" hides the line.
+
+intro: >
+  Follow or Bounce is a one-person studio. I design and build AI and agentic
+  systems, add intelligence to existing products, and ship fast static sites
+  and interactive pieces. Small scope, direct contact, working software.
+
+services:
+  - name:    "Custom agents & automations"
+    price:   ""
+    timing:  "2–6 weeks, fixed scope"
+    summary: "A task-specific agent or automated workflow that does one job well — tool calls, retrieval, structured output, human check-points."
+    includes:
+      - "Scoping: the task, the tools, the failure modes, the eval"
+      - "Agent / pipeline implementation with tests"
+      - "Prompt + tool design, guardrails, cost controls"
+      - "Deployment (your infra or a small hosted service) and a runbook"
+
+  - name:    "AI integration for existing products"
+    price:   ""
+    timing:  "3–8 weeks"
+    summary: "Add LLM features to an app or site you already run — assistants, semantic search / RAG, structured extraction, classification, summarization."
+    includes:
+      - "Architecture: model and stack choice, data flow, privacy"
+      - "Retrieval + indexing pipeline where relevant"
+      - "Feature implementation behind a clean interface"
+      - "Evals, logging, and a plan for iterating after launch"
+
+  - name:    "Technical advisory & audits"
+    price:   ""
+    timing:  "Hourly or monthly retainer"
+    summary: "A second set of hands on the hard calls — architecture review, model and vendor selection, prompt and eval strategy, cost and latency work."
+    includes:
+      - "Codebase / architecture review with written findings"
+      - "Model + cost analysis, correlation of quality vs. spend"
+      - "Eval design so quality is measured, not guessed"
+      - "On-call review during a build (retainer)"
+
+  - name:    "Static sites & interactive builds"
+    price:   ""
+    timing:  "1–4 weeks"
+    summary: "Fast, hand-built sites with no CMS to rot — one-page sites for small operators, and long-scroll editorial / landing pieces in the style of the Writing section."
+    includes:
+      - "Design and build in a clean, documented system"
+      - "Deploy to static hosting (GitHub Pages / Netlify) — near-zero running cost"
+      - "Contact form, metadata, sitemap, performance pass"
+      - "Handover: the repo is yours, plainly documented"
+
+addons:
+  - "Naming and positioning"
+  - "Copywriting and editing"
+  - "Custom SVG / illustration / motion"
+  - "Maintenance retainer after launch"
+
+process:
+  - step: "Brief"
+    text: "A short call or a written brief. What the thing needs to do, for whom, by when. I'll say if I'm the wrong fit."
+  - step: "Direction"
+    text: "A fixed proposal — scope, price, timeline, and what I need from you. Half up front to start."
+  - step: "Build"
+    text: "Working software in your hands early and often. One clear channel, weekly checkpoints, no status theatre."
+  - step: "Handover"
+    text: "The repo, the runbook, the evals. A short window of support to shake out issues. Balance due on delivery."
+
+not_doing:
+  - "Ongoing social media or content marketing"
+  - "E-commerce platform builds (Shopify, etc.)"
+  - "\"AI strategy\" decks with no implementation"
+  - "Rescue jobs with no access to the people who built it"
+
+faq:
+  - q: "How do you price?"
+    a: "Fixed price for fixed scope, wherever the scope can be pinned down. Retainer or hourly for advisory and open-ended work. You get the number before anything starts."
+  - q: "Payment terms?"
+    a: "50% to book the slot, 50% on delivery. Retainers are billed monthly in advance."
+  - q: "Who owns the work?"
+    a: "You do — code, prompts, and assets transfer on final payment. I keep the right to describe the work and show non-confidential parts."
+  - q: "What's the stack?"
+    a: "Whatever fits: typically Python or TypeScript, the current strong models, and boring, inspectable infrastructure. I'll justify the choice in the proposal."
+  - q: "Do you sign NDAs?"
+    a: "Yes, a straightforward mutual NDA is fine before sharing anything sensitive."

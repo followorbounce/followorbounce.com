@@ -1,0 +1,32 @@
+# _data/reference.yml — practical guides and interactive tools
+# Fields: title, year, summary, tags[], link (/p/ path or external), cover, featured(bool)
+
+- title:   "Radio Reference Portal"
+  year:    "2026"
+  summary: "A single-screen radio-monitoring reference — Marine VHF, HAM, satellite, aviation, emergency, NOAA weather, and digital modes for the US and Hawaii."
+  tags:    ["Radio", "Reference"]
+  link:    "/p/radio-reference-portal"
+  cover:   ""
+  featured: true
+
+- title:   "Marine VHF Channels"
+  year:    "2026"
+  summary: "Complete Marine VHF channel reference for US and Hawaii waters: emergency, Coast Guard, NOAA weather, bridge-to-bridge, and commercial frequencies."
+  tags:    ["Marine", "VHF", "Reference"]
+  link:    "/p/marine-vhf-channels"
+  cover:   ""
+  featured: true
+
+- title:   "HAM Technician Crash Course"
+  year:    "2026"
+  summary: "Pass the FCC Amateur Radio Technician exam in about a week — a condensed cheat sheet plus an interactive practice quiz."
+  tags:    ["HAM", "Study guide", "Interactive"]
+  link:    "/p/ham-technician-crash-course"
+  cover:   "/assets/images/portfolio/ham-technician-crash-course.svg"
+
+- title:   "RFID / NFC / iButton Keys"
+  year:    "2025"
+  summary: "How access-key duplication actually works across RFID, NFC, and iButton — formats, frequencies, and what can and cannot be copied."
+  tags:    ["Access control", "Reference"]
+  link:    "/p/rfid-keys"
+  cover:   ""

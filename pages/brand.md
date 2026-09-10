@@ -11,7 +11,7 @@ permalink: /brand/
   <section class="brand-hero">
     <div class="brand-hero__label">
       <span class="eyebrow">Brand Identity</span>
-      <span class="brand-hero__issue">Issue {{ site.issue_number }}</span>
+      <span class="brand-hero__issue">Studio identity</span>
     </div>
     <h1 class="brand-hero__headline">
       A voice<br>
@@ -19,9 +19,9 @@ permalink: /brand/
       <em>flinch.</em>
     </h1>
     <p class="brand-hero__sub">
-      Follow or Bounce is a publication built on a single editorial wager:
-      ideas either earn their place, or they don't. Everything here —
-      the type, the colour, the cadence — exists to serve that premise.
+      Follow or Bounce is built on a single wager: an idea either earns its
+      place, or it doesn't. Everything here — the type, the colour, the
+      cadence — exists to serve that premise.
     </p>
   </section>
 
@@ -178,8 +178,8 @@ permalink: /brand/
 
         <div class="brand-type-row brand-type-row--body">
           <div class="brand-type-row__sample">
-            A publication built on the premise that ideas either earn their place,
-            or they don't. We write for readers who want substance over speed.
+            Built on the premise that an idea either earns its place, or it
+            doesn't. Small scope, working software, substance over speed.
           </div>
           <div class="brand-type-row__meta">
             <span>DM Mono 400</span>
@@ -328,14 +328,13 @@ permalink: /brand/
     <div class="brand-section__body">
 
       <p class="brand-body-text">
-        For editorial enquiries, press coverage, or licensing requests,
-        contact us directly.
+        For press, coverage, or licensing requests, get in touch directly.
       </p>
 
       <div class="brand-contact-row">
-        <a class="brand-contact-btn" href="{{ '/subscribe/' | relative_url }}">Contact →</a>
+        <a class="brand-contact-btn" href="{{ '/contact/' | relative_url }}">Contact →</a>
         <span class="brand-contact-note">
-          Please include your publication and intended use.
+          Please include your context and intended use.
         </span>
       </div>
 

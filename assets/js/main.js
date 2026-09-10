@@ -247,7 +247,8 @@
 
       var data = new FormData(form);
       data.append('_captcha', 'false');
-      data.append('_subject', 'New message — Follow or Bounce');
+      data.append('_template', 'table');
+      data.append('_subject', form.dataset.subject || 'New message — Follow or Bounce');
 
       var btn = form.querySelector('.form-submit');
       btn.textContent = 'Sending\u2026';

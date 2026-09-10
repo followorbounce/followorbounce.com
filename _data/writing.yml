@@ -1,0 +1,132 @@
+# _data/writing.yml — essays and interactive editorial pieces
+# Fields: title, year, summary, tags[], link (/p/ path), cover, featured(bool)
+
+- title:   "Signal & Noise"
+  year:    "2026"
+  summary: "A philosophical inquiry into smartphone dependence, digital normality, and communication as signal — and a case for radical disconnection."
+  tags:    ["Philosophy", "Technology", "Communication"]
+  link:    "/p/signal-noise"
+  cover:   "/assets/images/portfolio/signal-noise.svg"
+  featured: true
+
+- title:   "Ministry of Final Things"
+  year:    "2025"
+  summary: "A luxury-apocalypse catalogue documenting the aesthetic collapse of civilization — post-Soviet brutalism, Bauhaus decay, and institutional surrealism in pure HTML/CSS with cinematic scroll."
+  tags:    ["Editorial", "Experimental", "Motion"]
+  link:    "/p/collapse"
+  cover:   "/assets/images/portfolio/moft-cover.jpg"
+  featured: true
+
+- title:   "We Are Not Separate"
+  year:    "2026"
+  summary: "An immersive editorial on the dissolution of the isolated self into collective consciousness and unity."
+  tags:    ["Philosophy", "Consciousness"]
+  link:    "/p/its-us"
+  cover:   "/assets/images/portfolio/its-us.svg"
+  featured: true
+
+- title:   "Logos: The Word"
+  year:    "2025"
+  summary: "A digital liturgy for the information age, where the Logos is the operating system of reality and the Word is the code that runs the universe."
+  tags:    ["Theology", "Consciousness"]
+  link:    "/p/logos-the-word"
+  cover:   "/assets/images/portfolio/logos-the-word.svg"
+  featured: true
+
+- title:   "Divine Architecture"
+  year:    "2025"
+  summary: "A philosophical and architectural reading of the Divine Liturgy as a spiritual system and a sacred operating structure."
+  tags:    ["Theology", "Architecture"]
+  link:    "/p/divine-liturgy-architecture"
+  cover:   "/assets/images/portfolio/divine-liturgy-architecture.svg"
+
+- title:   "The Hero's Journey"
+  year:    "2025"
+  summary: "A mythopoetic path across cultures — Gilgamesh to the Bhagavad Gita — with branching moral choices and a fire-particle interface."
+  tags:    ["Mythology", "Interactive"]
+  link:    "/p/heros-journey"
+  cover:   "/assets/images/portfolio/heros-journey-cover.svg"
+
+- title:   "PROPHETIC OS"
+  year:    "2024"
+  summary: "To understand where we are, look at the surface of the earth. Everything matters — sometimes we just don't see it. Invisible is not empty."
+  tags:    ["Experimental", "Interactive"]
+  link:    "/p/prophetic-os"
+  cover:   "/assets/images/portfolio/prophetic-os.svg"
+
+- title:   "Singularity Archive"
+  year:    "2023"
+  summary: "A classified transmission on consciousness, programmed existence, and the neural architecture of reality."
+  tags:    ["Consciousness", "Experimental"]
+  link:    "/p/singularity"
+  cover:   "/assets/images/portfolio/singularity-archive.svg"
+
+- title:   "The Architecture of Untruth"
+  year:    "2025"
+  summary: "A brutalist editorial monument on lies, omission, and the collapse of sincerity in modern life."
+  tags:    ["Philosophy", "Editorial"]
+  link:    "/p/the-architecture-of-untruth"
+  cover:   "/assets/images/portfolio/the-architecture-of-untruth.svg"
+
+- title:   "The Closed Door"
+  year:    "2026"
+  summary: "Why DMT may be dangerous, unnecessary, or spiritually deceptive — a cyberpunk-minimalist essay on forced transcendence."
+  tags:    ["Consciousness", "Philosophy"]
+  link:    "/p/the-closed-door"
+  cover:   "/assets/images/portfolio/the-closed-door.svg"
+
+- title:   "Humanity as Functional Consciousness"
+  year:    "2026"
+  summary: "Is human awareness true autonomy, or a functional interface executing inside a larger system?"
+  tags:    ["Consciousness", "Philosophy"]
+  link:    "/p/humanity-as-functional-consciousness"
+  cover:   "/assets/images/portfolio/humanity-as-functional-consciousness.svg"
+
+- title:   "WHO ARE"
+  year:    "2026"
+  summary: "An existential digital manifesto on identity, empire, consciousness, and the illusion of progress."
+  tags:    ["Existentialism", "Manifesto"]
+  link:    "/p/who-are"
+  cover:   "/assets/images/portfolio/who-are.svg"
+
+- title:   "The Illuminators"
+  year:    "2026"
+  summary: "A cinematic meditation on self-deification, closed systems, and the ethics of light — where projection becomes control."
+  tags:    ["Editorial", "Experimental"]
+  link:    "/p/the-illuminators"
+  cover:   "/assets/images/portfolio/the-illuminators.svg"
+
+- title:   "Divine Training Architecture"
+  year:    "2026"
+  summary: "Judgment Day as the separation layer of a divine neural network — part lost scripture, part theological AI manifesto."
+  tags:    ["Theology", "Neural networks"]
+  link:    "/p/judgment-day-divine-network"
+  cover:   ""
+
+- title:   "The Word Is Love"
+  year:    "2026"
+  summary: "Love read through a digital lens — its meaning in the age of technology and artificial intelligence."
+  tags:    ["Theology", "Love"]
+  link:    "/p/the-word-is-love"
+  cover:   ""
+
+- title:   "Rewriting the Self"
+  year:    "2026"
+  summary: "Selfhood in the digital age — how technology is reshaping identity and consciousness."
+  tags:    ["Identity", "Technology"]
+  link:    "/p/rewriting-the-self"
+  cover:   "/assets/images/portfolio/rewriting-the-self.svg"
+
+- title:   "Ani Vaho Hoshia Na"
+  year:    "2025"
+  summary: "A liturgical manuscript reconstructed through modernist editorial design — sacred Hebrew prayer-book typography against cold archival silence."
+  tags:    ["Hebrew", "Typography", "Liturgical"]
+  link:    "/p/ani-vaho-hoshia-na"
+  cover:   "/assets/images/portfolio/ani-vaho-hoshia-na.svg"
+
+- title:   "Sheva Berachos"
+  year:    "2025"
+  summary: "Sacred transmission reconstructed through modernist editorial design — ArtScroll liturgical typography against cold archival silence."
+  tags:    ["Hebrew", "Typography", "Liturgical"]
+  link:    "/p/sheva-berachos"
+  cover:   "/assets/images/portfolio/sheva-berachos.svg"

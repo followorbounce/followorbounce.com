@@ -1,0 +1,52 @@
+# _data/work.yml — client & studio projects (Follow or Bounce)
+# Fields: title, year, client, role, summary, tags[], link, cover, featured(bool)
+#   link  — external live URL, or an internal /p/ path
+#   cover — /assets/images/portfolio/<file>, or "" for a text placeholder
+
+- title:   "Marine Wood Craft"
+  year:    "2026"
+  client:  "Marine Wood Craft — Honolulu"
+  role:    "Design, build, deploy"
+  summary: "Marketing site for a Honolulu marine woodworking and boat-restoration shop. Single-page static build covering services, process, and contact for Pacific vessel work."
+  tags:    ["Web", "Static site", "Marine"]
+  link:    "https://marinewoodcraft.com/"
+  cover:   "/assets/images/portfolio/marine-wood.jpg"
+  featured: true
+
+- title:   "Bay Current Diving"
+  year:    "2026"
+  client:  "Bay Current Diving — San Francisco"
+  role:    "Naming, identity, site"
+  summary: "Identity and one-page service site for a solo commercial hull diver on San Francisco Bay: hull cleaning, barnacle and prop work, zinc replacement for fishing and private vessels."
+  tags:    ["Identity", "Web", "Naming"]
+  link:    "https://followorbounce.github.io/BayCurrentDiving/"
+  cover:   "/assets/images/portfolio/bay-current.jpg"
+  featured: true
+
+- title:   "Meridian Mind"
+  year:    "2026"
+  client:  "Meridian Mind — wellness & acupuncture"
+  role:    "Brand identity"
+  summary: "Brand identity for a wellness and acupuncture practice — logotype, colour, type, and application across print and web."
+  tags:    ["Identity", "Wellness"]
+  link:    "/p/MeridianMind"
+  cover:   "/assets/images/portfolio/meridian-mind.jpg"
+  featured: true
+
+- title:   "KeyWave Hawaii"
+  year:    "2025"
+  client:  "KeyWave Hawaii"
+  role:    "Product site"
+  summary: "Service site for RFID, NFC, and iButton access-key duplication in Hawaii, including a mail-in workflow."
+  tags:    ["Web", "Access control", "Hawaii"]
+  link:    "/p/rfid-keys"
+  cover:   ""
+
+- title:   "Follow or Bounce — identity"
+  year:    "2024"
+  client:  "Self-initiated"
+  role:    "Brand system"
+  summary: "The studio's own identity: logotype, colour system, type scale, editorial voice, and a 1px border-grid layout language."
+  tags:    ["Brand book", "Typography"]
+  link:    "/brand/"
+  cover:   "/assets/images/portfolio/fob-brand.jpg"
