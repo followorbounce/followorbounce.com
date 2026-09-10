@@ -26,6 +26,7 @@ The premise behind the name: an idea either has gravity or it doesn't. Follow it
 - **[Work]({{ '/work/' | relative_url }})** — client and studio projects: identity systems, static sites, interactive builds.
 - **[Writing]({{ '/writing/' | relative_url }})** — essays and interactive pieces on technology, consciousness, theology, and the design of belief. Each is a self-contained page.
 - **[Reference]({{ '/reference/' | relative_url }})** — practical guides and tools I keep maintained, mostly radio and marine communication. Free to use.
+- **[Interests]({{ '/interests/' | relative_url }})** — the areas I keep reading and building in: aerospace, the Maya calendar, radio, time and perception.
 - **[Offers]({{ '/offers/' | relative_url }})** — what Follow or Bounce does now: AI and agentic systems, AI integration, technical advisory, and fast web builds.
 
 ---
@@ -34,7 +35,7 @@ The premise behind the name: an idea either has gravity or it doesn't. Follow it
 
 Direct contact, fixed scope where scope can be fixed, and software you can run rather than slides about software. I'll tell you early if I'm the wrong fit for something.
 
-I also keep a broader index of interests — space, the Maya calendar, radio, time and perception — at [followorbounce.github.io](https://followorbounce.github.io/).
+The [Interests]({{ '/interests/' | relative_url }}) page points to a broader set of mini-sites — space, the Maya calendar, radio — at [followorbounce.github.io](https://followorbounce.github.io/).
 
 ---
 

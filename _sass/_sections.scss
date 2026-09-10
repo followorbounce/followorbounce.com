@@ -296,6 +296,56 @@ select.form-field {
   a { color: var(--rust); }
 }
 
+// ── INTERESTS PAGE ──────────────────────────────────────────────────────────
+.interests {
+  border-top: var(--line);
+}
+
+.interest {
+  border-bottom: var(--line);
+  padding: 1.8rem 0;
+
+  &__area {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: .35rem;
+  }
+
+  &__note {
+    font-size: .8rem;
+    line-height: 1.65;
+    color: var(--slate);
+    max-width: 60ch;
+    margin-bottom: .9rem;
+  }
+
+  &__links { list-style: none; display: flex; flex-direction: column; }
+
+  &__link {
+    border-top: 1px solid rgba(13, 12, 10, .12);
+    font-size: .82rem;
+
+    a, &--soon {
+      display: grid;
+      grid-template-columns: 4.5rem 1fr;
+      gap: 1rem;
+      align-items: baseline;
+      padding: .6rem 0;
+      text-decoration: none;
+    }
+    a { color: var(--ink); &:hover { color: var(--rust); } }
+    &--soon { color: var(--fog); }
+  }
+
+  &__tag {
+    font-family: 'DM Mono', monospace;
+    font-size: .58rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--fog);
+  }
+}
+
 // ── FOOTER ──────────────────────────────────────────────────────────────────
 .footer-inner {
   display: flex;

@@ -41,6 +41,8 @@ navigation:
     url:   "/writing/"
   - title: "Reference"
     url:   "/reference/"
+  - title: "Interests"
+    url:   "/interests/"
   - title: "Offers"
     url:   "/offers/"
   - title: "Contact ↗"

@@ -1,0 +1,41 @@
+# _data/interests.yml — ongoing areas of interest (mostly external mini-sites)
+# Fields: area, note, links[] { title, url, kind }
+#   kind: "hub" | "page" | "ext" | "soon"
+
+intro: >
+  Beyond the studio and the essays, a few areas I keep reading and building in.
+  Most of this lives as separate mini-sites under
+  <a href="https://followorbounce.github.io/">followorbounce.github.io</a>.
+
+areas:
+  - area: "Aerospace"
+    note: "Spacecraft, deep-space probes, the history of getting off the planet."
+    links:
+      - { title: "Aerospace index", url: "https://followorbounce.github.io/aerospace/", kind: "hub" }
+      - { title: "Voyager & Pioneer", url: "https://followorbounce.github.io/aerospace/voyager-and-pioner", kind: "page" }
+      - { title: "The Apollo Program", url: "https://followorbounce.github.io/aerospace/tranquility-apollo-program", kind: "page" }
+      - { title: "James Webb Space Telescope", url: "https://followorbounce.github.io/aerospace/james-webb-space-telescope", kind: "page" }
+
+  - area: "The Maya calendar"
+    note: "Long Count, Tzolk'in, Haab', the Calendar Round — and the modern Dreamspell, kept separate."
+    links:
+      - { title: "Ju'un K'in — calendar reference", url: "https://followorbounce.github.io/Maya-Calendar/", kind: "hub" }
+
+  - area: "Radio & electronics"
+    note: "Overlaps with the Reference section — monitoring, propagation, small experiments."
+    links:
+      - { title: "Radio Reference Portal", url: "/p/radio-reference-portal", kind: "page" }
+      - { title: "Marine VHF Channels", url: "/p/marine-vhf-channels", kind: "page" }
+      - { title: "Experiments & observations", url: "", kind: "soon" }
+
+  - area: "Time, consciousness, perception"
+    note: "The throughline behind most of the Writing section — often approached through contested questions."
+    links:
+      - { title: "Signal & Noise", url: "/p/signal-noise", kind: "page" }
+      - { title: "The Closed Door", url: "/p/the-closed-door", kind: "page" }
+      - { title: "Humanity as Functional Consciousness", url: "/p/humanity-as-functional-consciousness", kind: "page" }
+
+  - area: "Elsewhere"
+    note: "Work that lives on other platforms."
+    links:
+      - { title: "Different Vision trainings", url: "https://designdivinefuture.wordpress.com/", kind: "ext" }

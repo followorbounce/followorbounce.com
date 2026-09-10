@@ -9,6 +9,7 @@
 - https://followorbounce.com/work/ — Work: client and studio projects
 - https://followorbounce.com/writing/ — Writing: essays and interactive pieces
 - https://followorbounce.com/reference/ — Reference: maintained guides and tools
+- https://followorbounce.com/interests/ — Interests: aerospace, the Maya calendar, radio, time and consciousness
 - https://followorbounce.com/offers/ — Offers: services (AI, agentic, advisory, web)
 - https://followorbounce.com/about/ — About
 - https://followorbounce.com/brand/ — Brand identity guide
@@ -55,6 +56,12 @@
 - https://followorbounce.github.io/BayCurrentDiving/ — Bay Current Diving: identity and site for a San Francisco Bay hull diver.
 - https://followorbounce.com/p/MeridianMind — Meridian Mind: brand identity for a wellness and acupuncture practice.
 
+## Interests (mostly external mini-sites)
+
+- https://followorbounce.github.io/aerospace/ — Aerospace: spacecraft, probes, telescopes.
+- https://followorbounce.github.io/Maya-Calendar/ — Ju'un K'in: a Classic Maya calendar reference.
+- https://designdivinefuture.wordpress.com/ — Different Vision trainings.
+
 ## Related
 
-- https://followorbounce.github.io/ — Labs: a broader personal index of interests (aerospace, Maya calendar, radio, philosophy).
+- https://followorbounce.github.io/ — Labs: the broader personal index these mini-sites sit under.
