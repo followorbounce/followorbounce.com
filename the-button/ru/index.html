@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Кнопка — история одного ремонта</title>
+<meta name="description" content="В пятнадцать лет я диагностировал мёртвый диск, мёртвую материнскую плату, мёртвый блок питания — и переустанавливал Windows больше раз, чем могу вспомнить. Компьютер всё равно падал. Понадобился месяц, чтобы понять: неисправна была сама кнопка включения.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Кнопка — история одного ремонта">
+<meta property="og:description" content="Месяц расследования компьютерной неисправности, которое закончилось самым странным возможным ответом: врал сам выключатель.">
+<meta property="og:url" content="https://followorbounce.com/the-button/ru/">
+<meta property="og:image" content="https://followorbounce.com/the-button/assets/images/cover-ru.svg">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Кнопка — история одного ремонта">
+<meta name="twitter:description" content="Заменили всё в компьютере, кроме той единственной детали, которая была неисправна на самом деле.">
+<meta name="twitter:image" content="https://followorbounce.com/the-button/assets/images/cover-ru.svg">
+
+<link rel="alternate" hreflang="en" href="https://followorbounce.com/the-button/en/">
+<link rel="alternate" hreflang="ru" href="https://followorbounce.com/the-button/ru/">
+<link rel="canonical" href="https://followorbounce.com/the-button/ru/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Кнопка — история одного ремонта",
+  "description": "Месяц расследования компьютерной неисправности, которое закончилось обнаружением того, что источником сбоя была физическая кнопка включения.",
+  "inLanguage": "ru",
+  "author": { "@type": "Person", "name": "Дмитрий" },
+  "genre": "Личная история, техническая мемуаристика",
+  "about": ["ремонт компьютеров", "диагностика", "поиск неисправностей", "аппаратный сбой"]
+}
+</script>
+</head>
+<body>
+
+<div class="system-bar" id="systemBar">
+  <div class="sb-left">
+    <span class="sb-dot" aria-hidden="true"></span>
+    <span class="sb-stage" id="sbStage">СИСТЕМА — ОЖИДАНИЕ</span>
+  </div>
+  <span class="sb-code" id="sbCode">СТАТУС: 000</span>
+  <nav class="lang-switch" aria-label="Язык">
+    <a href="../en/index.html">EN</a>
+    <a href="../ru/index.html" class="is-active">RU</a>
+  </nav>
+  <div class="sb-progress" id="sbProgress"></div>
+</div>
+
+<!-- ============================= HERO ============================= -->
+<header class="hero" data-stage data-stage-label="КНОПКА" data-stage-code="СТАТУС: 000">
+  <div class="container">
+    <p class="hero-kicker">История ремонта — Россия, пятнадцать лет</p>
+    <h1 class="hero-title">
+      <span class="line"><span>Заменили</span></span>
+      <span class="line"><span>всё, кроме</span></span>
+      <span class="line"><span>одного.</span></span>
+    </h1>
+    <p class="hero-sub">Мне было пятнадцать, я уже зарабатывал ремонтом компьютеров по знакомым, и был уверен, что умею читать технику как открытую книгу. На этот раз, чтобы прочитать её правильно, потребовался месяц — и то, что оказалось на самом деле сломано, ни разу не попало в список подозреваемых.</p>
+    <div class="hero-meta">
+      <div><strong>1 месяц</strong>Полное время решения</div>
+      <div><strong>200 км</strong>Поездка за деталями</div>
+      <div><strong>4 диагноза</strong>До настоящего</div>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="bar"></div>СКРОЛЛ</div>
+</header>
+
+<main>
+
+<!-- ============================= STAGE 01 ============================= -->
+<section class="stage" id="stage-1" data-stage data-stage-label="01 · ВЫЗОВ" data-stage-code="ЗАЯВКА ОТКРЫТА">
+  <div class="container">
+    <div class="stage-head">
+      <div class="stage-num">ЭТАП<b>01</b></div>
+      <h2 class="stage-title">Вызов</h2>
+    </div>
+    <div class="stage-body">
+      <div class="stage-text reveal-up">
+        <p>В пятнадцать лет у меня уже было небольшое неофициальное дело — ремонт компьютеров по звонку, выезд на дом, оплата на месте. Компьютер клиента вёл себя странно, сказал он по телефону. Я слышал такую фразу уже сотню раз.</p>
+        <p>Я приехал уверенным, с сумкой софта. Отвёртки не взял — не думал, что понадобится. Windows сбоил, выдавал ошибки, зависал в случайные моменты. Для меня на тот момент такая картина означала одно.</p>
+        <p><strong>Вирусы.</strong> Грязная система. Очевидный вывод — и тот, который я до этого делал правильно десятки раз.</p>
+      </div>
+      <div class="stage-figure reveal-up d1">
+        <div class="slip">
+          <div class="slip-row"><span class="k">КЛИЕНТ</span><span>Частная квартира</span></div>
+          <div class="slip-row"><span class="k">СИМПТОМ</span><span>Системные ошибки, зависания</span></div>
+          <div class="slip-row"><span class="k">ВЗЯТО С СОБОЙ</span><span>Только софт</span></div>
+          <div class="slip-row"><span class="k">ПЕРВЫЙ ДИАГНОЗ</span><span>Повреждение Windows</span></div>
+          <div class="slip-row"><span class="k">ДЕЙСТВИЕ</span><span>Полная переустановка</span></div>
+          <div class="slip-total"><span>ВЗЯТО</span><b>2 000 ₽</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= STAGE 02 ============================= -->
+<section class="stage" id="stage-2" data-stage data-stage-label="02 · ПЕРВАЯ ПОПЫТКА" data-stage-code="УВЕРЕННОСТЬ: ВЫСОКАЯ">
+  <div class="container">
+    <div class="stage-head">
+      <div class="stage-num">ЭТАП<b>02</b></div>
+      <h2 class="stage-title">Первая попытка</h2>
+    </div>
+    <div class="stage-body">
+      <div class="stage-text reveal-up">
+        <p>Я снёс диск и переустановил Windows набело. Пятнадцать минут работы, машина загрузилась чисто, всё выглядело нормально. Я взял деньги, попрощался и ушёл так же, как уходил всегда — уверенный в диагнозе, уверенный, что задача закрыта.</p>
+        <p>Через пятнадцать минут зазвонил телефон. Тот же компьютер. Та же проблема.</p>
+        <p>Первая мысль была не «мой диагноз неверен». Она была: клиент, видимо, сразу же куда-то не туда потыкал. Такое бывает. Переустановил Windows — и тут же открыл тот самый файл, который всё сломал в первый раз.</p>
+      </div>
+      <div class="stage-figure reveal-up d1">
+        <div class="diagnosis-card">
+          <span class="tag">Диагноз 01</span>
+          <h4>Вирусы / повреждённая система</h4>
+          <p>Симптомы совпадали с картиной, которую я видел и решал много раз. Решение быстрое, дешёвое и почти всегда верное.</p>
+          <div class="confidence">
+            <div class="label"><span>Уверенность на тот момент</span><span>92%</span></div>
+            <div class="track"><div class="fill"></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= STAGE 03 — LOOP ============================= -->
+<section class="stage" id="stage-3" data-stage data-stage-label="03 · ТА ЖЕ ОШИБКА СНОВА" data-stage-code="ОБНАРУЖЕН ЦИКЛ" data-stage-fault="true">
+  <div class="container">
+    <div class="stage-head">
+      <div class="stage-num">ЭТАП<b>03</b></div>
+      <h2 class="stage-title">Провал после успеха</h2>
+    </div>
+    <div class="stage-body narrow">
+      <div class="loop-wrap reveal-up">
+        <div class="loop-ring">
+          <span class="loop-count" id="loopCount">0</span>
+          <span class="loop-label">Переустановки</span>
+        </div>
+        <p style="max-width:52ch;text-align:center;font-size:1.05rem;">Я вернулся и переустановил Windows второй раз — на этот раз честно предупредив клиента: если повторится ещё раз, дело не в софте, и мне придётся забрать компьютер с собой. У меня в тот день даже отвёртки не было — все мои инструменты жили на флешке.</p>
+        <div class="loop-steps">
+          <div class="loop-step"><span class="n">01</span><span>Переустановить Windows, проверить загрузку, уйти</span><span class="status">ПОВТОРИЛОСЬ</span></div>
+          <div class="loop-step"><span class="n">02</span><span>Переустановить снова, предупредить клиента, уйти</span><span class="status">ПОВТОРИЛОСЬ</span></div>
+          <div class="loop-step"><span class="n">03</span><span>Софтверные варианты исчерпаны — переход к железу</span><span class="status">ДАЛЕЕ</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= STAGE 04 — INVESTIGATION ============================= -->
+<section class="stage" id="stage-4" data-stage data-stage-label="04 · РАССЛЕДОВАНИЕ" data-stage-code="ПРОВЕРКА ЖЕЛЕЗА">
+  <div class="container">
+    <div class="stage-head">
+      <div class="stage-num">ЭТАП<b>04</b></div>
+      <h2 class="stage-title">Расследование</h2>
+    </div>
+    <div class="stage-body">
+      <div class="stage-text reveal-up">
+        <p>Третий звонок, та же неисправность. Я забрал компьютер к себе. На моём столе он тоже падал — но с другой ошибкой, похожей на ту, что была у клиента, но не идентичной. Достаточно похожей, чтобы всё ещё пахнуть железом, а не привычкой.</p>
+        <p>Я заподозрил диск. Windows на нём не раз не грузилась чисто, а умирающий диск даёт именно такую нестабильную, плавающую ошибку. Я заменил диск, переустановил систему и гонял компьютер два-три дня без остановки. Чисто. Ни одного сбоя.</p>
+        <p>Отвёз обратно после обеда. При мне всё работало. Через три часа, вечером, снова зазвонил телефон.</p>
+      </div>
+      <div class="stage-figure reveal-up d1">
+        <div class="checklist">
+          <div class="check-item">
+            <div><div class="part">Операционная система</div><div class="note">Переустановлена дважды. Каждый раз чисто. Не причина.</div></div>
+            <span class="stamp cleared">Исключено</span>
+          </div>
+          <div class="check-item">
+            <div><div class="part">Жёсткий диск</div><div class="note">Заменён. 2–3 дня без сбоев на стенде.</div></div>
+            <span class="stamp replaced">Заменено</span>
+          </div>
+          <div class="check-item">
+            <div><div class="part">Результат в поле</div><div class="note">Тот же сбой вернулся спустя 3 часа после доставки.</div></div>
+            <span class="stamp recurred">Повторилось</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= STAGE 05 — ROAD ============================= -->
+<section class="stage road-wrap" id="stage-5" data-stage data-stage-label="05 · ДОРОГА" data-stage-code="200 КМ · ТУДА" data-road style="min-height:170vh;">
+  <div class="container" style="position:sticky; top:100px;">
+    <div class="stage-head">
+      <div class="stage-num">ЭТАП<b>05</b></div>
+      <h2 class="stage-title">Долгая дорога</h2>
+    </div>
+    <div class="stage-text reveal-up" style="max-width:60ch;">
+      <p>К этому моменту я подозревал материнскую плату — а это значит, на практике, замену платы, блока питания и видеокарты разом. Клиенту дискретная видеокарта была не нужна — хватило бы встроенной графики новой платы. Старый корпус, новая начинка.</p>
+      <p>Ничего из этого не продавалось у нас. Ближайший город, где можно было купить нормальные детали, — в 200 километрах.</p>
+    </div>
+    <div class="road-track">
+      <div class="road-fill" id="roadFill"></div>
+      <div class="road-stops">
+        <div class="road-stop"><span class="rs-km">0 КМ</span><span class="rs-label">Выезд из города</span></div>
+        <div class="road-stop"><span class="rs-km">100 КМ</span><span class="rs-label">Половина пути, без объездов</span></div>
+        <div class="road-stop"><span class="rs-km">200 КМ</span><span class="rs-label">Город — плата, БП, видеокарта</span></div>
+        <div class="road-stop"><span class="rs-km">300 КМ</span><span class="rs-label">Обратно, распаковка, сборка</span></div>
+        <div class="road-stop"><span class="rs-km">400 КМ</span><span class="rs-label">Переустановка, неделя тестов</span></div>
+      </div>
+    </div>
+    <div class="odometer"><span>ПРОЙДЕНО</span><span id="odoValue">000 КМ</span></div>
+    <div class="road-note reveal-up">
+      <p>Я собрал машину той же ночью, переустановил Windows ещё раз и пользовался компьютером сам — это был единственный компьютер в квартире брата, где я тогда жил. Я гонял его больше недели, прежде чем доверился ему достаточно, чтобы везти обратно.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============================= STAGE 06 — REVEAL ============================= -->
+<section class="reveal-stage" id="stage-6" data-stage data-stage-label="06 · ПРАВДА" data-stage-code="ПРИЧИНА НАЙДЕНА" data-stage-fault="true">
+  <div class="container">
+    <p class="reveal-pre reveal-up">Я привёз собранный заново компьютер. При мне всё работало. Я ушёл. Через десять минут зазвонил телефон. Я буквально не поверил своим ушам.</p>
+    <div class="reveal-list reveal-up d1">
+      <div>Не операционная система.</div>
+      <div>Не диск.</div>
+      <div>Не материнская плата.</div>
+      <div>Не блок питания.</div>
+      <div>Не видеокарта.</div>
+    </div>
+    <h3 class="reveal-word">Кнопка включения.</h3>
+    <p class="reveal-caption">Каждый внутренний компонент в этом корпусе был новым — половину, по иронии, я забрал себе и собрал из неё свой компьютер. Единственная деталь, которую никто не додумался заподозрить, — это физическая кнопка на передней панели корпуса. Она врала всё это время, и каждый мой диагноз молча предполагал, что кнопке можно доверять.</p>
+    <div class="reveal-fix">РЕШЕНИЕ — Полностью отключить физическую кнопку. Загрузка только через reboot.</div>
+  </div>
+</section>
+
+<!-- ============================= STAGE 07 — REFLECTION ============================= -->
+<section class="stage" id="stage-7" data-stage data-stage-label="07 · ВЫВОДЫ" data-stage-code="ДЕЛО ЗАКРЫТО">
+  <div class="container">
+    <div class="stage-head">
+      <div class="stage-num">ЭТАП<b>07</b></div>
+      <h2 class="stage-title">Чему это научило</h2>
+    </div>
+    <div class="reflect-grid reveal-up">
+      <div class="reflect-card"><span class="num">01</span><p>Любой диагноз стоит на непроверенных допущениях. Мой предполагал, что кнопка — это просто провод, а провод не врёт.</p></div>
+      <div class="reflect-card"><span class="num">02</span><p>Повторяющийся симптом — не доказательство повторяющейся причины. Четыре разных решения дали один и тот же сбой по четырём разным причинам — кроме одной, которая вовсе не была отдельной причиной, а той же неисправностью в другой одежде.</p></div>
+      <div class="reflect-card"><span class="num">03</span><p>Иногда решение — не в правильной детали, а в том, чтобы полностью убрать точку отказа из цепи. Клиент больше никогда не трогал эту кнопку.</p></div>
+    </div>
+    <div class="closing reveal-up d1">
+      <p>Я провозился с этим одним компьютером, с перерывами, около месяца — дольше любой другой работы до этого. Именно поэтому я до сих пор не до конца доверяю первому диагнозу, и этот урок сопровождает меня в любой отладке с тех пор, включая аппаратную работу, которой я занимаюсь сейчас: плавающий вход на контроллере ретранслятора на бумаге выглядит точь-в-точь как программный баг — пока не приложишь к нему мультиметр.</p>
+      <p class="signoff">— Дмитрий, WH6HIS</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:16px;">
+    <span>КНОПКА — ИСТОРИЯ ОДНОГО РЕМОНТА</span>
+    <span>followorbounce.com</span>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

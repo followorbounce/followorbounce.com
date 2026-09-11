@@ -1,0 +1,358 @@
+/* ==========================================================================
+   THE BUTTON — a repair story
+   Design system: Bauhaus geometry × mid-century American editorial
+   Palette:  paper #F7F7F3 · ink #111111 · signal #E2231A · steel #7A7A74 · line #D9D9D3
+   Type:     Archivo Black (display) · IBM Plex Sans (body) · IBM Plex Mono (data/system)
+   ========================================================================== */
+
+:root{
+  --paper:#F7F7F3;
+  --ink:#111111;
+  --signal:#E2231A;
+  --steel:#7A7A74;
+  --line:#D9D9D3;
+  --paper-dim:#EDEDE7;
+
+  --display: "Archivo Black", "Arial Black", sans-serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --unit: 8px;
+  --edge: clamp(20px, 5vw, 64px);
+  --maxw: 1180px;
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
+}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+::selection{ background:var(--ink); color:var(--paper); }
+
+a{ color:inherit; }
+
+img,svg{ display:block; max-width:100%; }
+
+h1,h2,h3{ font-family:var(--display); margin:0; letter-spacing:-0.01em; }
+
+.container{ max-width:var(--maxw); margin:0 auto; padding-left:var(--edge); padding-right:var(--edge); }
+
+.eyebrow{
+  font-family:var(--mono);
+  font-size:12px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--steel);
+}
+
+.rule{ border:0; border-top:1px solid var(--line); margin:0; }
+
+/* -------------------------------------------------------------------------
+   SYSTEM READOUT — fixed diagnostic strip, the signature element.
+   Tracks the reader's position through the story like an instrument panel.
+--------------------------------------------------------------------------- */
+.system-bar{
+  position:fixed;
+  top:0; left:0; right:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  padding:14px var(--edge);
+  background:var(--paper);
+  border-bottom:1px solid var(--line);
+  font-family:var(--mono);
+  font-size:11px;
+  letter-spacing:0.06em;
+}
+.system-bar .sb-left{ display:flex; align-items:center; gap:10px; min-width:0; }
+.system-bar .sb-dot{
+  width:8px; height:8px; border-radius:50%;
+  background:var(--ink);
+  flex:none;
+  transition:background .25s ease;
+}
+.system-bar.is-fault .sb-dot{ background:var(--signal); animation:blink 1s steps(2,end) infinite; }
+@keyframes blink{ 50%{ opacity:0.15; } }
+.system-bar .sb-stage{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.system-bar .sb-code{ color:var(--steel); white-space:nowrap; }
+.system-bar .sb-progress{
+  position:absolute; bottom:-1px; left:0; height:2px; background:var(--ink); width:0%;
+  transition:width .1s linear;
+}
+
+/* -------------------------------------------------------------------------
+   NAV / LANGUAGE SWITCH
+--------------------------------------------------------------------------- */
+.lang-switch{
+  font-family:var(--mono); font-size:11px; letter-spacing:.06em;
+  display:flex; gap:8px; flex:none;
+}
+.lang-switch a{ text-decoration:none; padding:2px 6px; border:1px solid transparent; }
+.lang-switch a.is-active{ border-color:var(--ink); }
+.lang-switch a:hover{ border-color:var(--steel); }
+
+/* -------------------------------------------------------------------------
+   HERO
+--------------------------------------------------------------------------- */
+.hero{
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-top:72px;
+  position:relative;
+}
+.hero .container{ width:100%; }
+.hero-kicker{ font-family:var(--mono); font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--steel); margin-bottom:18px; }
+.hero-title{
+  font-size:clamp(2.6rem, 8vw, 6.4rem);
+  line-height:0.96;
+  text-transform:uppercase;
+  max-width:14ch;
+}
+.hero-title .line{ display:block; overflow:hidden; }
+.hero-title .line span{ display:block; transform:translateY(110%); transition:transform 0.8s cubic-bezier(.16,.84,.2,1); }
+.hero-title.reveal .line span{ transform:translateY(0); }
+.hero-title .line:nth-child(2) span{ transition-delay:0.08s; }
+.hero-title .line:nth-child(3) span{ transition-delay:0.16s; }
+.hero-sub{ margin-top:28px; max-width:46ch; font-size:1.05rem; color:#2c2c2c; }
+.hero-meta{
+  margin-top:56px;
+  display:grid;
+  grid-template-columns:repeat(3,auto);
+  gap:32px;
+  font-family:var(--mono);
+  font-size:12px;
+  color:var(--steel);
+}
+.hero-meta strong{ display:block; color:var(--ink); font-size:14px; font-family:var(--body); font-weight:600; margin-bottom:4px; }
+.hero-scroll{
+  position:absolute; bottom:28px; left:var(--edge);
+  font-family:var(--mono); font-size:11px; letter-spacing:.1em; color:var(--steel);
+  display:flex; align-items:center; gap:10px;
+}
+.hero-scroll .bar{ width:1px; height:36px; background:var(--line); position:relative; overflow:hidden; }
+.hero-scroll .bar::after{ content:""; position:absolute; top:0; left:0; right:0; height:40%; background:var(--ink); animation:scrolldown 1.6s ease-in-out infinite; }
+@keyframes scrolldown{ 0%{ transform:translateY(-100%);} 100%{ transform:translateY(250%);} }
+
+/* -------------------------------------------------------------------------
+   STAGE STRUCTURE
+--------------------------------------------------------------------------- */
+.stage{
+  padding:120px 0;
+  position:relative;
+  border-top:1px solid var(--line);
+}
+.stage-head{
+  display:grid;
+  grid-template-columns:120px 1fr;
+  gap:24px;
+  margin-bottom:56px;
+  align-items:end;
+}
+.stage-num{
+  font-family:var(--mono);
+  font-size:14px;
+  color:var(--steel);
+}
+.stage-num b{ display:block; font-family:var(--display); font-size:56px; color:var(--ink); line-height:1; margin-top:6px; }
+.stage-title{ font-size:clamp(1.8rem,4vw,3.1rem); text-transform:uppercase; line-height:1.02; }
+.stage-body{
+  display:grid;
+  grid-template-columns:minmax(0,7fr) minmax(0,5fr);
+  gap:64px;
+}
+.stage-body.narrow{ grid-template-columns:minmax(0,1fr); max-width:74ch; }
+.stage-text p{ margin:0 0 1.2em; font-size:1.05rem; max-width:56ch; }
+.stage-text p:last-child{ margin-bottom:0; }
+.stage-text strong{ font-weight:600; }
+.stage-figure{ position:relative; }
+
+.reveal-up{ opacity:0; transform:translateY(28px); transition:opacity .7s ease, transform .7s cubic-bezier(.16,.84,.2,1); }
+.reveal-up.in-view{ opacity:1; transform:translateY(0); }
+.reveal-up.d1{ transition-delay:.08s; }
+.reveal-up.d2{ transition-delay:.16s; }
+.reveal-up.d3{ transition-delay:.24s; }
+
+/* -------------------------------------------------------------------------
+   STAGE 01 — receipt / call slip
+--------------------------------------------------------------------------- */
+.slip{
+  border:1px solid var(--ink);
+  padding:28px;
+  font-family:var(--mono);
+  font-size:13px;
+}
+.slip-row{ display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px dashed var(--line); gap:16px; }
+.slip-row:last-child{ border-bottom:0; }
+.slip-row .k{ color:var(--steel); }
+.slip-total{ margin-top:16px; padding-top:16px; border-top:1px solid var(--ink); display:flex; justify-content:space-between; font-size:16px; }
+.slip-total b{ font-family:var(--display); font-size:22px; }
+
+/* -------------------------------------------------------------------------
+   STAGE 02 — first diagnosis card
+--------------------------------------------------------------------------- */
+.diagnosis-card{
+  border:1px solid var(--ink);
+  padding:32px;
+}
+.diagnosis-card .tag{
+  display:inline-block; font-family:var(--mono); font-size:11px; letter-spacing:.1em;
+  padding:4px 10px; border:1px solid var(--ink); margin-bottom:20px; text-transform:uppercase;
+}
+.diagnosis-card h4{ font-family:var(--display); font-size:1.6rem; text-transform:uppercase; margin:0 0 10px; }
+.confidence{ margin-top:24px; }
+.confidence .label{ font-family:var(--mono); font-size:11px; color:var(--steel); display:flex; justify-content:space-between; margin-bottom:6px; }
+.confidence .track{ height:8px; background:var(--paper-dim); position:relative; }
+.confidence .fill{ position:absolute; inset:0; width:0%; background:var(--ink); transition:width 1.4s cubic-bezier(.16,.84,.2,1); }
+.confidence.in-view .fill{ width:92%; }
+
+/* -------------------------------------------------------------------------
+   STAGE 03 — the loop
+--------------------------------------------------------------------------- */
+.loop-wrap{ display:flex; flex-direction:column; align-items:center; gap:0; }
+.loop-ring{
+  width:min(280px, 60vw); aspect-ratio:1;
+  border-radius:50%;
+  border:1px solid var(--line);
+  position:relative;
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:8px;
+}
+.loop-ring::before{
+  content:""; position:absolute; inset:-1px; border-radius:50%;
+  border:2px solid var(--ink); border-top-color:transparent; border-right-color:transparent;
+  animation:spin 3.2s linear infinite;
+}
+@keyframes spin{ to{ transform:rotate(360deg); } }
+.loop-ring .loop-count{ font-family:var(--display); font-size:3.4rem; }
+.loop-ring .loop-label{ position:absolute; bottom:20%; font-family:var(--mono); font-size:11px; letter-spacing:.12em; color:var(--steel); text-transform:uppercase; }
+.loop-steps{ margin-top:40px; width:100%; }
+.loop-step{
+  display:grid; grid-template-columns:28px 1fr auto; gap:16px; align-items:baseline;
+  padding:14px 0; border-bottom:1px solid var(--line);
+  font-family:var(--mono); font-size:13px;
+}
+.loop-step:last-child{ border-bottom:0; }
+.loop-step .n{ color:var(--steel); }
+.loop-step .status{ color:var(--signal); letter-spacing:.06em; }
+
+/* -------------------------------------------------------------------------
+   STAGE 04 — investigation checklist
+--------------------------------------------------------------------------- */
+.checklist{ display:flex; flex-direction:column; }
+.check-item{
+  display:grid; grid-template-columns:1fr auto; gap:20px; align-items:center;
+  padding:22px 0; border-bottom:1px solid var(--line);
+}
+.check-item:first-child{ border-top:1px solid var(--line); }
+.check-item .part{ font-family:var(--display); font-size:1.15rem; text-transform:uppercase; }
+.check-item .note{ font-family:var(--body); font-size:.92rem; color:var(--steel); margin-top:4px; max-width:48ch; }
+.stamp{
+  font-family:var(--mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+  padding:6px 12px; border:2px solid var(--ink); white-space:nowrap; transform:rotate(-3deg);
+}
+.stamp.cleared{ color:var(--steel); border-color:var(--steel); }
+.stamp.replaced{ border-color:var(--ink); }
+.stamp.recurred{ border-color:var(--signal); color:var(--signal); }
+
+/* -------------------------------------------------------------------------
+   STAGE 05 — the road (horizontal journey)
+--------------------------------------------------------------------------- */
+.road-wrap{ position:relative; padding-top:10px; }
+.road-track{ position:relative; height:2px; background:var(--line); margin:60px 0 0; }
+.road-fill{ position:absolute; left:0; top:0; height:100%; width:0%; background:var(--ink); transition:width .1s linear; }
+.road-stops{ position:relative; display:flex; justify-content:space-between; margin-top:-1px; }
+.road-stop{ position:relative; text-align:center; flex:1; }
+.road-stop::before{
+  content:""; width:11px; height:11px; border-radius:50%; background:var(--paper); border:2px solid var(--line);
+  position:absolute; top:-6px; left:50%; transform:translateX(-50%); transition:border-color .3s ease, background .3s ease;
+}
+.road-stop.hit::before{ border-color:var(--ink); background:var(--ink); }
+.road-stop .rs-km{ font-family:var(--mono); font-size:11px; color:var(--steel); margin-top:20px; display:block; }
+.road-stop .rs-label{ font-family:var(--body); font-size:.85rem; margin-top:4px; max-width:16ch; margin-inline:auto; }
+.road-note{ margin-top:64px; max-width:60ch; }
+.odometer{
+  font-family:var(--mono); font-size:12px; color:var(--steel);
+  display:flex; justify-content:space-between; margin-top:8px;
+}
+
+/* -------------------------------------------------------------------------
+   STAGE 06 — the reveal (climax)
+--------------------------------------------------------------------------- */
+.reveal-stage{ padding:180px 0; text-align:center; border-top:1px solid var(--ink); }
+.reveal-pre{ font-family:var(--mono); font-size:13px; letter-spacing:.14em; color:var(--steel); text-transform:uppercase; }
+.reveal-list{ margin:30px auto 0; max-width:520px; font-family:var(--mono); font-size:1rem; color:var(--steel); }
+.reveal-list div{ padding:6px 0; text-decoration:line-through; text-decoration-color:var(--steel); opacity:.6; }
+.reveal-word{
+  font-family:var(--display);
+  font-size:clamp(3rem, 13vw, 9rem);
+  line-height:0.95;
+  text-transform:uppercase;
+  margin:34px 0 0;
+  opacity:0; transform:scale(.94);
+  transition:opacity 1s cubic-bezier(.16,.84,.2,1), transform 1s cubic-bezier(.16,.84,.2,1);
+}
+.reveal-word.in-view{ opacity:1; transform:scale(1); }
+.reveal-caption{ margin-top:28px; font-family:var(--body); font-size:1.05rem; max-width:44ch; margin-inline:auto; color:#2c2c2c; }
+.reveal-fix{
+  display:inline-block; margin-top:40px; padding:14px 22px; border:1px solid var(--ink);
+  font-family:var(--mono); font-size:12px; letter-spacing:.06em;
+}
+
+/* -------------------------------------------------------------------------
+   STAGE 07 — reflection
+--------------------------------------------------------------------------- */
+.reflect-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); }
+.reflect-card{ background:var(--paper); padding:32px 28px; }
+.reflect-card .num{ font-family:var(--mono); font-size:11px; color:var(--steel); }
+.reflect-card p{ font-family:var(--body); font-size:.98rem; margin:14px 0 0; }
+.closing{ margin-top:80px; max-width:64ch; }
+.closing p{ font-size:1.15rem; }
+.closing .signoff{ margin-top:40px; font-family:var(--mono); font-size:12px; color:var(--steel); }
+
+/* -------------------------------------------------------------------------
+   FOOTER
+--------------------------------------------------------------------------- */
+.site-footer{
+  border-top:1px solid var(--ink);
+  padding:48px 0 64px;
+  font-family:var(--mono); font-size:11px; color:var(--steel);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px;
+}
+
+/* -------------------------------------------------------------------------
+   RESPONSIVE
+--------------------------------------------------------------------------- */
+@media (max-width:900px){
+  .stage-head{ grid-template-columns:1fr; gap:8px; }
+  .stage-num b{ font-size:40px; }
+  .stage-body{ grid-template-columns:1fr; gap:40px; }
+  .hero-meta{ grid-template-columns:1fr 1fr; }
+  .reflect-grid{ grid-template-columns:1fr; }
+  .road-stop .rs-label{ display:none; }
+}
+@media (max-width:560px){
+  .stage{ padding:80px 0; }
+  .hero-meta{ grid-template-columns:1fr; gap:20px; }
+  .check-item{ grid-template-columns:1fr; }
+  .stamp{ justify-self:start; }
+}
+
+/* Focus visibility */
+a:focus-visible, button:focus-visible{ outline:2px solid var(--signal); outline-offset:3px; }
