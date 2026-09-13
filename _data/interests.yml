@@ -26,7 +26,9 @@ areas:
     links:
       - { title: "Radio Reference Portal", url: "/p/radio-reference-portal", kind: "page" }
       - { title: "Marine VHF Channels", url: "/p/marine-vhf-channels", kind: "page" }
-      - { title: "Experiments & observations", url: "", kind: "soon" }
+      # "Experiments & Observations" removed from here 2026-09 — it's still unbuilt,
+      # and the hub (followorbounce.github.io, Radio & Electronics) is now the one
+      # place it's promised, instead of being double-listed as "Soon" in two repos.
 
   - area: "Time, consciousness, perception"
     note: "The throughline behind most of the Writing section — often approached through contested questions."
