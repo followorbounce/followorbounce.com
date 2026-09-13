@@ -1,56 +1,9 @@
 ---
 layout: default
 title: "Follow or Bounce"
-description: "Personal site of D.V. — writing on technology and consciousness, maintained reference tools, and Follow or Bounce, a one-person studio for AI, agentic systems, and the web."
+description: "Personal site of D.V. Active project: followorbounce.github.io."
 ---
 
 <p class="eyebrow">Follow or Bounce</p>
 <h1>Ideas that <em>stick</em>,<br>or they don't.</h1>
-<p class="desc">
-  Personal site of <strong>D.V.</strong> — engineer and designer.
-  Writing, reference tools, and a one-person studio.
-  Signal over noise.
-</p>
-
-<div class="cards">
-  <a class="card" href="{{ '/work/' | relative_url }}">
-    <p class="card-num">01 — Work</p>
-    <p class="card-title">Selected Projects</p>
-    <p class="card-body">Identity systems, static sites, and interactive builds for clients and myself.</p>
-  </a>
-  <a class="card" href="{{ '/writing/' | relative_url }}">
-    <p class="card-num">02 — Writing</p>
-    <p class="card-title">Essays &amp; Artifacts</p>
-    <p class="card-body">Long-form and interactive pieces on technology, consciousness, and the design of belief.</p>
-  </a>
-  <a class="card" href="{{ '/reference/' | relative_url }}">
-    <p class="card-num">03 — Reference</p>
-    <p class="card-title">Guides &amp; Tools</p>
-    <p class="card-body">Maintained references for radio, marine communication, and access control. Free to use.</p>
-  </a>
-  <a class="card" href="{{ '/interests/' | relative_url }}">
-    <p class="card-num">04 — Interests</p>
-    <p class="card-title">What I'm Reading</p>
-    <p class="card-body">Aerospace, the Maya calendar, radio, and the nature of time and consciousness.</p>
-  </a>
-  <a class="card card--accent" href="{{ '/offers/' | relative_url }}">
-    <p class="card-num">05 — Offers</p>
-    <p class="card-title">Hire the Studio</p>
-    <p class="card-body">AI &amp; agentic systems, AI integration, technical advisory, and fast web builds.</p>
-  </a>
-</div>
-
-<section class="home-latest" aria-label="Latest writing">
-  <p class="eyebrow">Latest writing</p>
-  {% assign latest = site.data.writing | sort: "year" | reverse %}
-  {% for item in latest limit:4 %}
-  <article class="content-row">
-    <a class="content-row__link" href="{{ item.link | relative_url }}">
-      <span class="content-row__year">{{ item.year }}</span>
-      <span class="content-row__body"><span class="content-row__title">{{ item.title }}</span></span>
-      {% if item.tags %}<span class="content-row__tags">{{ item.tags | join: " · " }}</span>{% endif %}
-    </a>
-  </article>
-  {% endfor %}
-  <p class="home-latest__all"><a href="{{ '/writing/' | relative_url }}">All writing →</a></p>
-</section>
+<p class="desc"><a href="https://followorbounce.github.io/">followorbounce.github.io →</a></p>
