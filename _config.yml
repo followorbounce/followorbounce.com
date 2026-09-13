@@ -39,8 +39,6 @@ navigation:
     url:   "/work/"
   - title: "Writing"
     url:   "/writing/"
-  - title: "Reference"
-    url:   "/reference/"
   - title: "Interests"
     url:   "/interests/"
   - title: "Offers"

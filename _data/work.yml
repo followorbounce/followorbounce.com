@@ -40,7 +40,16 @@
   summary: "Service site for RFID, NFC, and iButton access-key duplication in Hawaii, including a mail-in workflow."
   tags:    ["Web", "Access control", "Hawaii"]
   link:    "/p/rfid-keys"
-  cover:   ""
+  cover:   "/assets/images/portfolio/keywave-hawaii.svg"
+
+- title:   "Heavy Machinery: The Blueprint"
+  year:    "2026"
+  client:  "Self-initiated — Knowledge Network"
+  role:    "Research, data, interactive build"
+  summary: "An interactive comparator ranking 20 real machines from the Heavy Machinery Encyclopedia by height, weight, engine power, and load capacity — every figure translated into a human-scale equivalent."
+  tags:    ["Web", "Data viz", "Interactive"]
+  link:    "https://followorbounce.github.io/heavy-machinery-blueprint"
+  cover:   "/assets/images/portfolio/heavy-machinery-blueprint.svg"
 
 - title:   "Follow or Bounce — identity"
   year:    "2024"

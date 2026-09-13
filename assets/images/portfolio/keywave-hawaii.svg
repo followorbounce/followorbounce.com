@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" width="1536" height="1024">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071018"/>
+      <stop offset="100%" stop-color="#0a1a22"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff"/>
+      <stop offset="100%" stop-color="#00ff88"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="80%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="#00d2ff" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#00d2ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="20%" cy="85%" r="45%">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0.07"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1536" height="1024" fill="url(#bg)"/>
+  <rect width="1536" height="1024" fill="url(#glow1)"/>
+  <rect width="1536" height="1024" fill="url(#glow2)"/>
+
+  <g stroke="rgba(0,210,255,0.05)" stroke-width="1">
+    <line x1="0" y1="128" x2="1536" y2="128"/>
+    <line x1="0" y1="256" x2="1536" y2="256"/>
+    <line x1="0" y1="384" x2="1536" y2="384"/>
+    <line x1="0" y1="512" x2="1536" y2="512"/>
+    <line x1="0" y1="640" x2="1536" y2="640"/>
+    <line x1="0" y1="768" x2="1536" y2="768"/>
+    <line x1="0" y1="896" x2="1536" y2="896"/>
+    <line x1="192" y1="0" x2="192" y2="1024"/>
+    <line x1="384" y1="0" x2="384" y2="1024"/>
+    <line x1="576" y1="0" x2="576" y2="1024"/>
+    <line x1="768" y1="0" x2="768" y2="1024"/>
+    <line x1="960" y1="0" x2="960" y2="1024"/>
+    <line x1="1152" y1="0" x2="1152" y2="1024"/>
+    <line x1="1344" y1="0" x2="1344" y2="1024"/>
+  </g>
+
+  <!-- Ocean waves, bottom, Hawaii cue -->
+  <g fill="none" stroke-width="2" opacity="0.35">
+    <path d="M -20 900 Q 100 860 220 900 Q 340 940 460 900 Q 580 860 700 900 Q 820 940 940 900 Q 1060 860 1180 900 Q 1300 940 1420 900 Q 1500 875 1556 895" stroke="#00d2ff"/>
+    <path d="M -20 950 Q 120 915 260 950 Q 400 985 540 950 Q 680 915 820 950 Q 960 985 1100 950 Q 1240 915 1380 950 Q 1470 970 1556 955" stroke="#00ff88" opacity="0.7"/>
+  </g>
+
+  <!-- Top label -->
+  <text x="80" y="80" font-family="'Courier New', monospace" font-size="14" fill="rgba(0,210,255,0.6)" letter-spacing="6">ACCESS CONTROL · RFID / NFC / iBUTTON · HONOLULU, HI</text>
+  <line x1="80" y1="92" x2="640" y2="92" stroke="rgba(0,210,255,0.2)" stroke-width="1"/>
+
+  <!-- Main title -->
+  <text x="80" y="260" font-family="Arial Black, Arial, sans-serif" font-size="120" font-weight="900" fill="url(#accentGrad)" letter-spacing="-2">KEYWAVE</text>
+  <text x="80" y="360" font-family="Arial Black, Arial, sans-serif" font-size="72" font-weight="900" fill="white" letter-spacing="-1" opacity="0.95">HAWAII</text>
+
+  <!-- Subtitle tag -->
+  <rect x="80" y="400" width="460" height="40" rx="20" fill="rgba(0,210,255,0.1)" stroke="rgba(0,210,255,0.3)" stroke-width="1"/>
+  <text x="310" y="425" font-family="'Courier New', monospace" font-size="13" fill="#00d2ff" text-anchor="middle" letter-spacing="3">KEY DUPLICATION · MAIL-IN SERVICE</text>
+
+  <!-- Key + broadcasting waves icon, right side -->
+  <g transform="translate(1180,300)">
+    <g fill="none" stroke="rgba(0,255,136,0.7)" stroke-width="6" stroke-linecap="round">
+      <circle cx="0" cy="0" r="46"/>
+      <circle cx="0" cy="0" r="16" fill="rgba(7,16,24,1)"/>
+      <line x1="46" y1="0" x2="150" y2="0"/>
+      <line x1="120" y1="0" x2="120" y2="34"/>
+      <line x1="150" y1="0" x2="150" y2="46"/>
+    </g>
+    <g fill="none" stroke="#00d2ff" stroke-width="2" opacity="0.6">
+      <path d="M -70 -30 A 95 95 0 0 0 -70 30"/>
+      <path d="M -100 -55 A 140 140 0 0 0 -100 55" opacity="0.4"/>
+      <path d="M -130 -80 A 185 185 0 0 0 -130 80" opacity="0.25"/>
+    </g>
+  </g>
+
+  <!-- Card row: three formats -->
+  <g font-family="'Courier New', monospace">
+    <rect x="80" y="700" width="220" height="120" rx="12" fill="rgba(20,28,38,0.8)" stroke="rgba(0,210,255,0.2)" stroke-width="1"/>
+    <rect x="80" y="700" width="220" height="4" rx="2" fill="rgba(0,210,255,0.6)"/>
+    <text x="100" y="732" font-size="12" fill="rgba(0,210,255,0.7)" letter-spacing="3">FORMAT</text>
+    <text x="100" y="768" font-size="26" font-weight="700" fill="white">RFID</text>
+    <text x="100" y="798" font-size="11" fill="rgba(255,255,255,0.5)">125 kHz proximity</text>
+
+    <rect x="320" y="700" width="220" height="120" rx="12" fill="rgba(20,28,38,0.8)" stroke="rgba(0,255,136,0.2)" stroke-width="1"/>
+    <rect x="320" y="700" width="220" height="4" rx="2" fill="rgba(0,255,136,0.6)"/>
+    <text x="340" y="732" font-size="12" fill="rgba(0,255,136,0.7)" letter-spacing="3">FORMAT</text>
+    <text x="340" y="768" font-size="26" font-weight="700" fill="white">NFC</text>
+    <text x="340" y="798" font-size="11" fill="rgba(255,255,255,0.5)">13.56 MHz smart</text>
+
+    <rect x="560" y="700" width="240" height="120" rx="12" fill="rgba(20,28,38,0.8)" stroke="rgba(199,125,255,0.2)" stroke-width="1"/>
+    <rect x="560" y="700" width="240" height="4" rx="2" fill="rgba(199,125,255,0.6)"/>
+    <text x="580" y="732" font-size="12" fill="rgba(199,125,255,0.7)" letter-spacing="3">FORMAT</text>
+    <text x="580" y="768" font-size="26" font-weight="700" fill="white">iButton</text>
+    <text x="580" y="798" font-size="11" fill="rgba(255,255,255,0.5)">1-Wire contact memory</text>
+  </g>
+
+  <!-- Bottom bar -->
+  <line x1="80" y1="900" x2="1456" y2="900" stroke="rgba(0,210,255,0.1)" stroke-width="1"/>
+  <text x="80" y="940" font-family="'Courier New', monospace" font-size="13" fill="rgba(0,210,255,0.4)" letter-spacing="2">RESIDENTIAL · COMMERCIAL · FLEET KEYS, ISLAND-WIDE</text>
+  <text x="1456" y="940" font-family="'Courier New', monospace" font-size="13" fill="rgba(0,210,255,0.3)" text-anchor="end" letter-spacing="1">followorbounce.com/p/rfid-keys/</text>
+
+  <!-- Corner accent -->
+  <rect x="0" y="0" width="4" height="1024" fill="url(#accentGrad)"/>
+</svg>
