@@ -8,7 +8,7 @@ permalink: /about/
 <div class="page-hero">
   <p class="eyebrow">About</p>
   <h1>About</h1>
-  <p class="subtitle">This is a personal site. I write, I build reference tools, and I run <em>Follow or Bounce</em> — a one-person studio.</p>
+  <p class="subtitle">This is a personal site and the home of <em>Follow or Bounce</em>, a one-person studio — though the front door now points further out, to a larger, more active Knowledge Network I keep growing separately.</p>
 </div>
 
 <div class="page-content">
@@ -23,11 +23,12 @@ The premise behind the name: an idea either has gravity or it doesn't. Follow it
 
 ## What's on this site
 
-- **[Work]({{ '/work/' | relative_url }})** — client and studio projects: identity systems, static sites, interactive builds.
-- **[Writing]({{ '/writing/' | relative_url }})** — essays and interactive pieces on technology, consciousness, theology, and the design of belief. Each is a self-contained page.
-- **[Reference]({{ '/reference/' | relative_url }})** — practical guides and tools I keep maintained, mostly radio and marine communication. Free to use.
-- **[Interests]({{ '/interests/' | relative_url }})** — the areas I keep reading and building in: aerospace, the Maya calendar, radio, time and perception.
-- **[Offers]({{ '/offers/' | relative_url }})** — what Follow or Bounce does now: AI and agentic systems, AI integration, technical advisory, and fast web builds.
+- **[Work]({{ '/work/' | relative_url }})** — client and studio projects: a marketing site for a Honolulu marine-woodworking shop, an identity and site for a solo commercial hull diver on San Francisco Bay, a wellness-practice brand, and a couple of self-initiated interactive builds.
+- **[Writing]({{ '/writing/' | relative_url }})** — essays and interactive editorial pieces, mostly on consciousness, technology, and theology. Each is a self-contained page, several with their own scroll-driven design rather than a shared template.
+- **[Interests]({{ '/interests/' | relative_url }})** — the areas I keep reading and building in: aerospace, the Maya calendar, radio, time and perception. Most of this lives as separate mini-sites at followorbounce.github.io now, not here.
+- **[Offers]({{ '/offers/' | relative_url }})** — what Follow or Bounce does for clients: custom agents and automations, AI integration into existing products, technical advisory, and fast static or interactive builds.
+
+[Reference]({{ '/reference/' | relative_url }}) is still here too — four practical guides on radio, marine VHF, and access-key duplication — it just came out of the main nav when it stopped being the thing I was actively adding to. Still live, still free, reachable from Interests or the direct link.
 
 ---
 
@@ -35,7 +36,7 @@ The premise behind the name: an idea either has gravity or it doesn't. Follow it
 
 Direct contact, fixed scope where scope can be fixed, and software you can run rather than slides about software. I'll tell you early if I'm the wrong fit for something.
 
-The [Interests]({{ '/interests/' | relative_url }}) page points to a broader set of mini-sites — space, the Maya calendar, radio — at [followorbounce.github.io](https://followorbounce.github.io/).
+The home page here now points straight at [followorbounce.github.io](https://followorbounce.github.io/) instead of a card grid of this site's own sections — a separate, more actively updated Knowledge Network of essays and interactive tools: wave physics, aerospace history, the Maya calendar, a heavy-machinery encyclopedia, and a growing family of real Web Audio synthesizers built entirely in the browser, among others. This site is the studio and the archive; that one is where the newest work is actually happening.
 
 ---
 
