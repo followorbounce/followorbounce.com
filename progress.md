@@ -9,6 +9,8 @@
 
 ## Recent work
 
+- 2026-10-02 — Client-sites review pass (uncommitted): `p/MarineWoodCraft.html` brand-guide stats aligned with the client site (20+/500+ → 3–7+/50+); `og:image`/`twitter:image` in all `p/*.html` made absolute; fixed missing OG images on its-us/its-us-1 (→ its-us.svg) and rfid-keys (→ keywave-hawaii.svg); `p/who-are.html` og:url `/pages/who-are` → `/p/who-are`; `p/rewriting-the-self.html` broken relative image src fixed; `p/BayCurrentDiving.html` "Back to site" links (pointed to non-existent `p/index.html`) now go to the live BCD site; aria-labels on the two search inputs. Open: `p/marine-vhf-channels.html` og:image PNG doesn't exist; `p/FollowOrBounce_v2.html` (headless draft) is published; several p/ pages lack meta descriptions.
+
 - 2026-09-16 — Added CLAUDE.md and progress.md for ongoing tracking.
 - 2026-09-13 (23f2b27) — Rewrite About to match the site's actual current state.
 - 2026-09-13 (e43bd81) — Stop double-promising "Experiments & Observations".
