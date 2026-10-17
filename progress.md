@@ -29,3 +29,6 @@
 - Finish normalizing `p/*.html` heads/chrome across all standalone pages (referenced as ongoing in commit f22b64e).
 - Set real `price` values in `_data/offers.yml` when the Offers page is ready to show pricing.
 - No open uncommitted changes as of this writing.
+
+## 2026-10-16 — Index infrastructure
+- HTTPS enforcement switched on for the Pages site (http now 301s to https); IndexNow key file added.
