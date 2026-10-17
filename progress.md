@@ -32,3 +32,6 @@
 
 ## 2026-10-16 — Index infrastructure
 - HTTPS enforcement switched on for the Pages site (http now 301s to https); IndexNow key file added.
+
+## 2026-10-16 — Forwarding
+- Replaced the site with redirect pages to https://followorbounce.github.io/ (see CLAUDE.md top note). 45 URLs + 404.

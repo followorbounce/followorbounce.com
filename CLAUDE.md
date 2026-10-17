@@ -1,5 +1,8 @@
 # followorbounce.com
 
+> **2026-10-16 — this domain now only forwards.** At the owner's request every followorbounce.com URL forwards to https://followorbounce.github.io/ (homepage, not path-mapped). The site is 45 redirect pages (one per URL that was live, listed in `redirects.txt`) + `404.html` for anything else; each has a canonical to the target, a 0-second meta refresh (Google treats it as permanent) and `location.replace`. The old Jekyll site (essays under /p/, Work/Writing/Offers/Brand, the-button) is only in git history — restore from the commit before "Forward followorbounce.com". DNS is at GoDaddy (not reachable from here); a true 301 would need GoDaddy forwarding. `_config.yml` keeps Jekyll only to exclude these notes from publishing (they were public at /CLAUDE/ and /progress/ before). Everything below describes the old site.
+
+
 Personal site of D.V.: writing, reference tools, and "Follow or Bounce" — a one-person studio for AI, agentic systems, and the web. Live at followorbounce.com on GitHub Pages. Stack: Jekyll, Sass, vanilla JS.
 
 ## Structure

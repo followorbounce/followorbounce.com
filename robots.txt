@@ -1,13 +1,3 @@
+# followorbounce.com now forwards to https://followorbounce.github.io/
 User-agent: *
-Allow: /
-Sitemap: https://followorbounce.com/sitemap.xml
-
-# LLM crawlers
-User-agent: GPTBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
 Allow: /
