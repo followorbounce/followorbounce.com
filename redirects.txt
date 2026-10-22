@@ -43,3 +43,4 @@
 /the-button/en/
 /the-button/
 /the-button/ru/
+/creative-network-app/
