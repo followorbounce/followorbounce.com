@@ -44,3 +44,4 @@
 /the-button/
 /the-button/ru/
 /creative-network-app/
+/the-middle-of-everything/ -> /The-Middle-of-Everything/ (the show site lives at /The-Middle-of-Everything/, built from ../the-middle-of-everything)

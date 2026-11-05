@@ -34,3 +34,7 @@ Personal site of D.V.: writing, reference tools, and "Follow or Bounce" — a on
 
 ## Analytics
 Cloudflare Web Analytics beacon added 2026-09-19 — own site (host `followorbounce.com`, see `[[cloudflare-analytics-setup]]` in memory). Injected into `_layouts/default.html` plus every standalone `p/*.html` page individually (they carry their own `<head>`). Skipped `p/FollowOrBounce_v2.html` — orphaned draft fragment, no `<head>` to inject into.
+
+## The Middle of Everything (2026-11-04)
+- `/The-Middle-of-Everything/` is a real static site, not a forward. It is built in `../the-middle-of-everything` and copied here by its `tools/deploy.sh`; never edit it here.
+- `/the-middle-of-everything/` (lowercase) redirects to it. Its sitemap is listed in robots.txt.

@@ -1,3 +1,5 @@
 # followorbounce.com now forwards to https://followorbounce.github.io/
 User-agent: *
 Allow: /
+# /The-Middle-of-Everything/ is a real site (the show), not a forward
+Sitemap: https://followorbounce.com/The-Middle-of-Everything/sitemap.xml
