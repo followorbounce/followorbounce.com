@@ -152,3 +152,5 @@ blockquote { margin: 0 0 14px; padding: 10px 14px; border-left: 4px solid var(--
 .foot a { color: var(--paper); }
 .foot .studio { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.05rem; margin-bottom: 10px; }
 .foot .small { font-size: .82rem; opacity: .75; max-width: 680px; margin: 10px auto 0; }
+.trailer h2 { margin-bottom: 0; }
+.trailer .player { margin: 18px 0 0; }
